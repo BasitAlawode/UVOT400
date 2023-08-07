@@ -311,11 +311,23 @@ NOTE: This will make use of the trackers results files we have provided to gener
 
 ## Downloading Pre-trained trackers models
 
+We have provided the link to download the pre-trained tracker models utilized in this work below.
+
+[Link to Pre-trained Models](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EiEaxX6XgplLtXsPv95PURUBSNODK-irvo46Jks38-OmjA?e=bF3X59)
+
+1. Navigate to the folder trained_tracker
+2. Create a folder with the name of the tracker
+3. Download the tracker pre-trained model from the link above.
+
+NOTE: The models provided in the link above were gotten from the respective tracker repositories.
+
 ## Running the Pretrained Trackers on Custom Videos
 
 If you would like to run the trackers on our dataset videos or your own videos, you will need to do the following:
 
-1. Download.....
+1. In progress....
 
 
 ## Attribute-wise Performance Evaluation
+
+1. In progress....

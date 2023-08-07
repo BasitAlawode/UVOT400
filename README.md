@@ -27,7 +27,7 @@ This repository contains all the necessary codes, and links detailing our work o
 - [x] Experiment environment creation ([here](README.md/#experiment-environment-setup))
 - [x] Pretrained trackers benchmarking results ([here](1_Benchmarking_README.md))
 - [x] Reproducing our results ([here](1_Benchmarking_README.md/#reproducing-our-results))
-- [ ] Provide link to download pretrained trackers models ([here](1_Benchmarking_README.md/#downloading-pre-trained-trackers-models))
+- [x] Provide link to download pretrained trackers models ([here](1_Benchmarking_README.md/#downloading-pre-trained-trackers-models))
 - [ ] Running pretrained trackers on custom videos [here](1_Benchmarking_README.md/#running-the-pretrained-trackers-on-custom-videos))
 - [ ] Attribute-wise evaluation results [here](1_Benchmarking_README.md/#attribute-wise-performance-evaluation))
 - [ ] Fine-tuned trackers benchmarking besults
@@ -109,3 +109,8 @@ For our experiments, we have utilized the success, precision, and normalized pre
 - Thanks to the [Pysot](https://github.com/STVIR/pysot) and [Pytracking](https://github.com/visionml/pytracking) libraries for providing the tracking evaluation codes.
 - This work acknowledges the support provided by the Khalifa University of Science and Technology under Faculty Start-Up grants FSU-2022-003 Award No. 8474000401.
 
+## Citation
+
+If our work is useful for your research, please consider citing:
+
+ - In progress 
