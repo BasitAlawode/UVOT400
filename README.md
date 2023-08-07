@@ -18,7 +18,7 @@
 This repository contains all the necessary codes, and links detailing our work on Improving Underwater Visual Tracking With a Large Scale Dataset and Image Enhancement.
 
 ## News
-- Aug. 15, 2023: Repository made public.
+- Aug. 07, 2023: Repository made public.
 - June 30, 2023: Dataset (Train and Test Set link available)
 
 ### TODO
