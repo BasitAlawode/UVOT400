@@ -1,0 +1,16 @@
+/.idea
+/pysot/core/configTest.py
+/tools/*
+*.txt
+!/tools/testTracker.py
+!/tools/eval.py
+!/tools/train.py
+!/tools/snapshot/*.pth
+/toolkit/datasets/trackingnet.py
+/toolkit/datasets/vot.py
+!/pretrained_models
+*.pth
+/pysot/models/model_builder_gat_Test.py
+/pysot/tracker/siamgat_tracker_upmis.py
+/setup.py
+!requirement.txt
