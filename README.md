@@ -105,3 +105,7 @@ For our experiments, we have utilized the success, precision, and normalized pre
 
 ## Aknowledgements
 
+- Thanks to the authors of the trackers for providing the implementations.
+- Thanks to the [Pysot](https://github.com/STVIR/pysot) and [Pytracking](https://github.com/visionml/pytracking) libraries for providing the tracking evaluation codes.
+- This work acknowledges the support provided by the Khalifa University of Science and Technology under Faculty Start-Up grants FSU-2022-003 Award No. 8474000401.
+
