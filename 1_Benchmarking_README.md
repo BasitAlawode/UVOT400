@@ -315,9 +315,10 @@ We have provided the link to download the pre-trained tracker models utilized in
 
 [Link to Pre-trained Models](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EiEaxX6XgplLtXsPv95PURUBSNODK-irvo46Jks38-OmjA?e=bF3X59)
 
-1. Navigate to the folder trained_tracker
-2. Create a folder with the name of the tracker
-3. Download the tracker pre-trained model from the link above.
+1. Check the tracker folder name from the link above.
+2. Navigate to trained_tracker folder.
+3. Create another folder with the same folder name.
+4. Download the tracker pre-trained model from the link above and put it in the created folder.
 
 NOTE: The models provided in the link above were gotten from the respective tracker repositories.
 
