@@ -1,11 +1,11 @@
-# Protocol 1: Benchmark Pre-trained Open-air Trackers on UW-VOT400
+# Protocol 1: Benchmark Pre-trained Open-air Trackers on UVOT400
 
-In this experiment, we benchmark SOTA trackers on our dataset (UW-VOT400) and compare the performance with the UOT100 dataset. 
+In this experiment, we benchmark SOTA trackers on our dataset (UVOT400) and compare the performance with the UOT100 dataset. 
 
 ![Tracking Sample](images/sample_tracking.png)
 
 Datasets:
- 1. UW-VOT400: Downlad the training set and test set from [here](README.md/#links-to-datasets) and merge them together in single folder.
+ 1. UVOT400: Downlad the training set and test set from [here](README.md/#links-to-datasets) and merge them together in single folder.
  2. UOT100: Download the dataset from [here](README.md/#links-to-datasets).
 
 Metrics: 
@@ -19,7 +19,7 @@ Metrics:
   <tr>
     <th></th>
     <th></th>
-    <th colspan="3" style="text-align: center;">UW-VOT400</th>
+    <th colspan="3" style="text-align: center;">UVOT400</th>
     <th colspan="3" style="text-align: center;">UOT100</th>
   </tr>
   <tr>
@@ -285,11 +285,11 @@ Metrics:
   </tr>
 </table>
 
-| UW-VOT400  | UOT100 |
+| UVOT400  | UOT100 |
 | :---: | :---:|
-| ![UW-VOT400 Success Plot](tracker_results/UTB400/plots/success_plot_UTB400.png) | ![UOT100 Success Plot](tracker_results/UOT100/plots/success_plot_UOT100.png)  |
-| ![UW-VOT400 Normalized Precision Plot](tracker_results/UTB400/plots/norm_precision_plot_UTB400.png)  | ![UOT100 Normalized Precision Plot](tracker_results/UOT100/plots/norm_precision_plot_UOT100.png)  |
-|![UW-VOT400 Precision Plot](tracker_results/UTB400/plots/precision_plot_UTB400.png) | ![UOT100 Precision Plot](tracker_results/UOT100/plots/precision_plot_UOT100.png) |
+| ![UVOT400 Success Plot](tracker_results/UTB400/plots/success_plot_UTB400.png) | ![UOT100 Success Plot](tracker_results/UOT100/plots/success_plot_UOT100.png)  |
+| ![UVOT400 Normalized Precision Plot](tracker_results/UTB400/plots/norm_precision_plot_UTB400.png)  | ![UOT100 Normalized Precision Plot](tracker_results/UOT100/plots/norm_precision_plot_UOT100.png)  |
+|![UVOT400 Precision Plot](tracker_results/UTB400/plots/precision_plot_UTB400.png) | ![UOT100 Precision Plot](tracker_results/UOT100/plots/precision_plot_UOT100.png) |
 
 
 

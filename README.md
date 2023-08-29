@@ -35,19 +35,21 @@ This repository contains all the necessary codes, and links detailing our work o
 
 ## Our Main Contributions
 
-1. A large and diverse high-quality UW-VOT400 benchmark dataset is presented, consisting of 400 sequences and 275000 manually bounding-box annotated frames, introducing 17 distinct tracking attributes with diverse under creatures as targets.
+1. A large and diverse high-quality UVOT400 benchmark dataset is presented, consisting of 400 sequences and 275,000 manually annotated bounding-box frames, introducing 17 distinct tracking attributes with diverse underwater creatures as targets.
 
-2. A large-scale benchmarking of 25 recent SOTA trackers is performed on the proposed dataset.
+2. A large-scale benchmarking of 24 recent SOTA trackers is performed on the proposed dataset, adopting established performance metrics.
 
-3. An UWIR algorithm is proposed to improve the VOT performance on the UW sequences. Selected SOTA trackers are re-trained on the restored version of the proposed dataset resulting in significant performance improvement across all compared trackers.
+3. An UWIE-TR algorithm is introduced. It improves the UVOT performance of SOTA open-air trackers on underwater sequences.
 
-## Our Dataset: UW-VOT400
+4. The selected SOTA trackers are re-trained on the enhanced version of the proposed dataset resulting in significant performance improvement across all compared trackers.
+
+## Our Dataset: UVOT400
 
 Details about the data collection, annotations, domain-specific tracking attributes can be found in our paper (link to paper).
 
 ### Links to Datasets
 
-1. Our UW-VOT400 dataset:
+1. Our UVOT400 dataset:
    - Train Set: [Download link](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/Em9CQUgLcY1BnEBqpGUTrxQBnVPzBfpfPcUW7RmH3EON9w?e=pjNgIY) 
    - Test Set: [Download link](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EmJKcYONDL9Kll9OJkArN-4B9UgfBPejZ8LHAxn6aP__Xg?e=21ELVO). 
 
@@ -73,8 +75,8 @@ For our work, we have pulled the trackers from their respective github repositor
 1. Create the python environment
 
 ```bash
-conda create -y --name uwvot400 python==3.7.16
-conda activate uwvot400  
+conda create -y --name uvot400 python==3.7.16
+conda activate uvot400  
 ``` 
 
 2. Install pytorch and torchvision
@@ -97,7 +99,7 @@ python setup.py build_ext --inplace
 
 For our experiments, we have utilized the success, precision, and normalized precision VOT tracker evaluation metrics. For comparison with GOT10k open-air dataset, the average overlap (AO), success rate 0.50, and 0.75 are utilized.
 
-1. [Protocol I: Benchmarking Pre-trained trackers on UW-VOT400](1_Benchmarking_README.md)
+1. [Protocol I: Benchmarking Pre-trained trackers on UVOT400](1_Benchmarking_README.md)
 
 2. [Protocol II: Finetuning and re-benchmarking](2_Finetuning_Benchmarking.MD)
 
