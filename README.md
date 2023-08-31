@@ -1,5 +1,7 @@
 # Improving Underwater Visual Tracking With a Large Scale Dataset and Image Enhancement
 
+[Paper ArXiv Link](https://arxiv.org/abs/2308.15816)
+
 <table>
   <tr>
     <th><div align="center">
@@ -18,6 +20,8 @@
 This repository contains all the necessary codes, and links detailing our work on Improving Underwater Visual Tracking With a Large Scale Dataset and Image Enhancement.
 
 ## News
+- Aug. 31, 2023: ArXiv Link to paper provided
+- Aug. 30, 2023: Paper submitted for publication
 - Aug. 07, 2023: Repository made public.
 - June 30, 2023: Dataset (Train and Test Set link available)
 
@@ -28,6 +32,8 @@ This repository contains all the necessary codes, and links detailing our work o
 - [x] Pretrained trackers benchmarking results ([here](1_Benchmarking_README.md))
 - [x] Reproducing our results ([here](1_Benchmarking_README.md/#reproducing-our-results))
 - [x] Provide link to download pretrained trackers models ([here](1_Benchmarking_README.md/#downloading-pre-trained-trackers-models))
+- [x] Provide link to paper ([here](https://arxiv.org/abs/2308.15816))
+- [ ] Provide additional bounding-box videos. 
 - [ ] Running pretrained trackers on custom videos [here](1_Benchmarking_README.md/#running-the-pretrained-trackers-on-custom-videos))
 - [ ] Attribute-wise evaluation results [here](1_Benchmarking_README.md/#attribute-wise-performance-evaluation))
 - [ ] Fine-tuned trackers benchmarking besults
@@ -115,4 +121,14 @@ For our experiments, we have utilized the success, precision, and normalized pre
 
 If our work is useful for your research, please consider citing:
 
- - In progress 
+@article{Alawode2023,
+archivePrefix = {arXiv},
+arxivId = {2308.15816},
+author = {Alawode, Basit and Dharejo, Fayaz Ali and Ummar, Mehnaz and Guo, Yuhang and Mahmood, Arif and Werghi, Naoufel and Khan, Fahad Shahbaz and Javed, Sajid},
+eprint = {2308.15816},
+title = {{Improving Underwater Visual Tracking With a Large Scale Dataset and Image Enhancement}},
+url = {http://arxiv.org/abs/2308.15816},
+volume = {14},
+year = {2023}
+}
+
