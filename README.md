@@ -33,6 +33,7 @@ This repository contains all the necessary codes, and links detailing our work o
 - [x] Reproducing our results ([here](1_Benchmarking_README.md/#reproducing-our-results))
 - [x] Provide link to download pretrained trackers models ([here](1_Benchmarking_README.md/#downloading-pre-trained-trackers-models))
 - [x] Provide link to paper ([here](https://arxiv.org/abs/2308.15816))
+- [x] Provide link to attributes file ([here](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=Q3Sa9B)).
 - [ ] Provide additional bounding-box videos. 
 - [ ] Running pretrained trackers on custom videos [here](1_Benchmarking_README.md/#running-the-pretrained-trackers-on-custom-videos))
 - [ ] Attribute-wise evaluation results [here](1_Benchmarking_README.md/#attribute-wise-performance-evaluation))
@@ -57,7 +58,8 @@ Details about the data collection, annotations, domain-specific tracking attribu
 
 1. Our UVOT400 dataset:
    - Train Set: [Download link](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/Em9CQUgLcY1BnEBqpGUTrxQBnVPzBfpfPcUW7RmH3EON9w?e=pjNgIY) 
-   - Test Set: [Download link](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EmJKcYONDL9Kll9OJkArN-4B9UgfBPejZ8LHAxn6aP__Xg?e=21ELVO). 
+   - Test Set: [Download link](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EmJKcYONDL9Kll9OJkArN-4B9UgfBPejZ8LHAxn6aP__Xg?e=21ELVO)
+   - Attributes file ([Download link](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=Q3Sa9B)). 
 
 2. Our Previous UTB180 Dataset: 
    - [Kaggle Link](https://www.kaggle.com/dataset/21f6e3008c9ac0f51479b93fe0bb0b015469d70153f8987d9f2c3bb3eebbba99). 
@@ -121,6 +123,7 @@ For our experiments, we have utilized the success, precision, and normalized pre
 
 If our work is useful for your research, please consider citing:
 
+```bibtex
 @article{Alawode2023,
 archivePrefix = {arXiv},
 arxivId = {2308.15816},
@@ -131,4 +134,4 @@ url = {http://arxiv.org/abs/2308.15816},
 volume = {14},
 year = {2023}
 }
-
+```
