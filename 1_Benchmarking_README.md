@@ -376,9 +376,15 @@ The folder structure should look like this:
    ```
 NOTE: Each video groundtruth_rect file should be of the format **N by [x,y,w,h]** where N is the number of sequence in the video (number of rows in the text file), **[x,y], w, h** denote the coordinate of the top-left corner, width and height of the target bounding-box in each frame respectively.
 
-3. Open [main.py](main_eval.py) in your favourite editor. Change dataset_names list in line 35,36 to your_video_parent_folder name.
+3. Open [main.py](main_eval.py) in your favourite editor. 
 
-4. Then, run. Tracking results will be shown in the terminal. Plots will be found in tracking_results/your_video_parent_folder/plot.
+4. Change dataset_names list in line 35-36 to your_video_parent_folder name.
+
+5. Also, edit lines 45-48 to reflect the trackers you're interested in.
+
+6. Then, run. 
+
+7. Tracking results will be shown in the terminal. Plots will be found in tracking_results/your_video_parent_folder/plot.
 
 
 ## Attribute-wise Performance Evaluation
