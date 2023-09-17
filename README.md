@@ -21,6 +21,8 @@
 
 This repository contains all the necessary codes, and links detailing our work on **Improving Underwater Visual Tracking With a Large Scale Dataset and Image Enhancement**.
 
+![Tracking Sample](images/sample_tracking.png)
+
 ## News
 - Aug. 31, 2023: ArXiv Link to paper provided
 - Aug. 30, 2023: Paper submitted for publication
