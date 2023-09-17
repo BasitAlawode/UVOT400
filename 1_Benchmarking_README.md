@@ -320,13 +320,65 @@ We have provided the link to download the pre-trained tracker models utilized in
 3. Create another folder with the same folder name.
 4. Download the tracker pre-trained model from the link above and put it in the created folder.
 
-NOTE: The models provided in the link above were gotten from the respective tracker repositories.
+As an example, the structure of the folder should be as shown below:
+
+  ```
+   ${PROJECT_ROOT}
+    -- trained_trackers
+        -- ardimp
+            |-- ardim tracker model
+            ...
+        -- automatch
+            |-- automatch tracker model
+        -- cswintt
+            |-- cswintt tracker model
+        ...
+   ```
+
+NOTE: The pretrained models provided in the link above were gotten from the respective tracker repositories.
+
 
 ## Running the Pretrained Trackers on Custom Videos
 
-If you would like to run the trackers on our dataset videos or your own videos, you will need to do the following:
+If you would like to run the trackers your own videos, you will need to do the following:
 
-1. In progress....
+1. Download the pretrained tracker(s) you want to evaluate on as described [here](1_Benchmarking_README.md/#downloading-pre-trained-trackers-models).
+
+2. Put your videos in the testing_datasets folder. 
+
+The folder structure should look like this:
+
+  ```
+   ${PROJECT_ROOT}
+    -- testing_datasets
+        -- Your_Videos_Parent_Folder
+          -- your_video_1_folder
+            --imgs
+              |-- 0001.jpg
+              |-- 0002.jpg
+              |-- 0003.jpg
+              ...
+            -- groundtruth_rect.txt
+          -- your_video_2_folder
+            --imgs
+              |-- 0001.jpg
+              |-- 0002.jpg
+              |-- 0003.jpg
+              ...
+            -- groundtruth_rect.txt
+          -- your_video_3_folder
+            --imgs
+              |-- 0001.jpg
+              |-- 0002.jpg
+              |-- 0003.jpg
+              ...
+            -- groundtruth_rect.txt
+          ...
+   ```
+
+3. Open [main.py](main_eval.py) in your favourite editor. Change dataset_names list in line 35,36 to your_video_parent_folder name.
+
+3. Then, run. Tracking results will be shown in the terminal. Plots will be found in tracking_results/your_video_parent_folder/plot.
 
 
 ## Attribute-wise Performance Evaluation

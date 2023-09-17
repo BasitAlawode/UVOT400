@@ -1,6 +1,7 @@
 # Improving Underwater Visual Tracking With a Large Scale Dataset and Image Enhancement
 
-[Paper ArXiv Link](https://arxiv.org/abs/2308.15816)
+[Paper ArXiv Link](https://arxiv.org/abs/2308.15816) | [Dataset](./README.md/#our-dataset-uvot400) | [Thumbnails](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp)
+
 
 <table>
   <tr>
@@ -15,9 +16,10 @@
   </tr>
 </table>
 
+
 ## About this repository
 
-This repository contains all the necessary codes, and links detailing our work on Improving Underwater Visual Tracking With a Large Scale Dataset and Image Enhancement.
+This repository contains all the necessary codes, and links detailing our work on **Improving Underwater Visual Tracking With a Large Scale Dataset and Image Enhancement**.
 
 ## News
 - Aug. 31, 2023: ArXiv Link to paper provided
@@ -34,8 +36,8 @@ This repository contains all the necessary codes, and links detailing our work o
 - [x] Provide link to download pretrained trackers models ([here](1_Benchmarking_README.md/#downloading-pre-trained-trackers-models))
 - [x] Provide link to paper ([here](https://arxiv.org/abs/2308.15816))
 - [x] Provide link to attributes file ([here](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=Q3Sa9B)).
-- [ ] Provide additional bounding-box videos. 
-- [ ] Running pretrained trackers on custom videos [here](1_Benchmarking_README.md/#running-the-pretrained-trackers-on-custom-videos)
+- [x] Running pretrained trackers on custom videos [here](1_Benchmarking_README.md/#running-the-pretrained-trackers-on-custom-videos)
+- [x] Provide dataset thumbnails [here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp). 
 - [ ] Attribute-wise evaluation results [here](1_Benchmarking_README.md/#attribute-wise-performance-evaluation)
 - [ ] Fine-tuned trackers benchmarking besults
 - [ ] Enhanced frames trackers benchmarking results
