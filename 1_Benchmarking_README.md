@@ -316,18 +316,17 @@ We have provided the link to download the pre-trained tracker models utilized in
 [Link to Pre-trained Models](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EiEaxX6XgplLtXsPv95PURUBSNODK-irvo46Jks38-OmjA?e=bF3X59)
 
 1. Check the tracker folder name from the link above.
-2. Navigate to trained_tracker folder.
-3. Create another folder with the same folder name.
+2. Navigate to trained_trackers folder.
+3. Create a folder with the same name as the tracker (as seen in the link above).
 4. Download the tracker pre-trained model from the link above and put it in the created folder.
 
-As an example, the structure of the folder should be as shown below:
+As an example, the structure of the trained_trackers folder should be as below:
 
   ```
    ${PROJECT_ROOT}
     -- trained_trackers
         -- ardimp
             |-- ardim tracker model
-            ...
         -- automatch
             |-- automatch tracker model
         -- cswintt
@@ -340,9 +339,9 @@ NOTE: The pretrained models provided in the link above were gotten from the resp
 
 ## Running the Pretrained Trackers on Custom Videos
 
-If you would like to run the trackers your own videos, you will need to do the following:
+If you would like to run the trackers on your videos, you will need to do the following:
 
-1. Download the pretrained tracker(s) you want to evaluate on as described [here](1_Benchmarking_README.md/#downloading-pre-trained-trackers-models).
+1. Download the pretrained tracker(s) you want to evaluate on as described [above](1_Benchmarking_README.md/#downloading-pre-trained-trackers-models).
 
 2. Put your videos in the testing_datasets folder. 
 
@@ -375,12 +374,13 @@ The folder structure should look like this:
             -- groundtruth_rect.txt
           ...
    ```
+NOTE: Each video groundtruth_rect file should be of the format **N by [x,y,w,h]** where N is the number of sequence in the video (number of rows in the text file), **[x,y], w, h** denote the coordinate of the top-left corner, width and height of the target bounding-box in each frame respectively.
 
 3. Open [main.py](main_eval.py) in your favourite editor. Change dataset_names list in line 35,36 to your_video_parent_folder name.
 
-3. Then, run. Tracking results will be shown in the terminal. Plots will be found in tracking_results/your_video_parent_folder/plot.
+4. Then, run. Tracking results will be shown in the terminal. Plots will be found in tracking_results/your_video_parent_folder/plot.
 
 
 ## Attribute-wise Performance Evaluation
 
-1. In progress....
+1. In progress...
