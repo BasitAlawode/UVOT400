@@ -6,7 +6,7 @@ In this experiment, we benchmark SOTA trackers on our dataset (UVOT400) and comp
 
 Datasets:
  1. UVOT400: Downlad the training set and test set from [here](README.md/#links-to-datasets) and merge them together in single folder.
- 2. UOT100: Download the dataset from [here](README.md/#links-to-datasets).
+ 2. UOT100: Download the dataset from [here](https://www.kaggle.com/datasets/landrykezebou/uot100-underwater-object-tracking-dataset).
 
 Metrics: 
  1. Success (Succ),
@@ -374,7 +374,7 @@ The folder structure should look like this:
             -- groundtruth_rect.txt
           ...
    ```
-NOTE: Each video groundtruth_rect file should be of the format **N by [x,y,w,h]** where N is the number of sequence in the video (number of rows in the text file), **[x,y], w, h** denote the coordinate of the top-left corner, width and height of the target bounding-box in each frame respectively.
+NOTE: Each video's groundtruth_rect file should be of the format **N by [x,y,w,h]** where N is the number of sequence in the video (number of rows in the text file), **[x,y], w, h** denote the coordinate of the top-left corner, width and height of the target bounding-box in each frame respectively.
 
 3. Open [main.py](main_eval.py) in your favourite editor. 
 
@@ -383,6 +383,10 @@ NOTE: Each video groundtruth_rect file should be of the format **N by [x,y,w,h]*
 5. Also, edit lines 45-48 to reflect the trackers you're interested in.
 
 6. Then, run. 
+
+```bash
+python main_eval.py
+```
 
 7. Tracking results will be shown in the terminal. Plots will be found in tracking_results/your_video_parent_folder/plot.
 
