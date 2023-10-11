@@ -123,7 +123,8 @@ class OPEBenchmark:
         return norm_precision_ret
 
     def show_result(self, success_ret, precision_ret=None,
-            norm_precision_ret=None, show_video_level=False, helight_threshold=0.6):
+                    norm_precision_ret=None, fps_ret=None, 
+                    show_video_level=False, helight_threshold=0.6):
         """pretty print result
         Args:
             result: returned dict from function eval
@@ -146,6 +147,10 @@ class OPEBenchmark:
         header = ("|{:^"+str(tracker_name_len)+"}|{:^9}|{:^16}|{:^11}|").format(
                 "Tracker name", "Success", "Norm Precision", "Precision")
         formatter = "|{:^"+str(tracker_name_len)+"}|{:^9.3f}|{:^16.3f}|{:^11.3f}|"
+        if fps_ret is not None:
+            header = ("|{:^"+str(tracker_name_len)+"}|{:^9}|{:^16}|{:^11}|{:^11}|").format(
+                "Tracker name", "Success", "Norm Precision", "Precision", "FPS")
+            formatter = "|{:^"+str(tracker_name_len)+"}|{:^9.3f}|{:^16.3f}|{:^11.3f}|{:^11.3f}|"
         print('-'*len(header))
         print(header)
         print('-'*len(header))
@@ -161,7 +166,12 @@ class OPEBenchmark:
                         axis=0)[20]
             else:
                 norm_precision = 0
-            print(formatter.format(tracker_name, success, norm_precision, precision))
+            
+            if fps_ret is None:
+                print(formatter.format(tracker_name, success, norm_precision, precision))
+            else:
+                fps = fps_ret[tracker_name]
+                print(formatter.format(tracker_name, success, norm_precision, precision, fps))
         print('-'*len(header))
 
         if show_video_level and len(success_ret) < 10 \

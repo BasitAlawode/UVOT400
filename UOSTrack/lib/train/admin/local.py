@@ -1,0 +1,27 @@
+class EnvironmentSettings:
+    def __init__(self):
+        self.workspace_dir = r'D:\winfred\UOSTrack'  # Base directory for saving network checkpoints.
+        self.tensorboard_dir = r'D:\winfred\UOSTrack\tensorboard'  # Directory for tensorboard files.
+        self.pretrained_networks = r'D:\winfred\UOSTrack\pretrained_networks'
+        self.lasot_dir = ''
+        self.got10k_dir = ''
+        self.got10k_val_dir = ''
+        self.lasot_lmdb_dir = ''
+        self.got10k_lmdb_dir = ''
+        self.trackingnet_dir = ''
+        self.trackingnet_lmdb_dir = ''
+        self.coco_dir = ''
+        self.coco_lmdb_dir = ''
+        self.imagenet_dir = ''
+        self.imagenet_lmdb_dir = ''
+        self.imagenet_lmdb_dir = ''
+        self.imagenetdet_dir = ''
+        self.ecssd_dir = ''
+        self.hkuis_dir = ''
+        self.msra10k_dir = ''
+        self.davis_dir = ''
+        self.youtubevos_dir = ''
+        self.fishextand_dir = ''
+        self.utb_dir = ''
+        self.ruod_dir=''
+        self.uot_dir = ''

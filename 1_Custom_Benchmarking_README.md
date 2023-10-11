@@ -6,12 +6,13 @@ To benchmark SOTA trackers on your custom videos:
 
 2. Download the pretrained tracker(s) you want to benchmark on as described below:
 
- - [Link to Pre-trained Models](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EiEaxX6XgplLtXsPv95PURUBSNODK-irvo46Jks38-OmjA?e=bF3X59)
+ - [Link to Pre-trained Models](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EiEaxX6XgplLtXsPv95PURUBSNODK-irvo46Jks38-OmjA?e=bF3X59).
+ - See a list of available trackers [here](1_Custom_Benchmarking_README.md/#list-of-currently-available-trackers).
  - Check the tracker folder name from the link above.
  - Navigate to trained_trackers folder.
  - Create a folder with the same name as the tracker (as seen in the link above).
  - Download the tracker pre-trained model from the link above and put it in the created folder.
-
+ 
 As an example, the structure of the trained_trackers folder should be as below:
 
   ```
@@ -87,6 +88,14 @@ Below is a list of currently available trackers (Will be updated regularly).
     <th style="border-right:1px solid white"></th>
     <th>Venue & Year</th>
     <th>Name & Link</th>
+  </tr>
+
+  <tr>
+    <td>Ocean Eng 2023</td>
+    <td><a href="https://github.com/LiYunfengLYF/UOSTrack">UOSTrack</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>ECCV 2022</td>
+    <td><a href="https://github.com/botaoye/OSTrack">OSTrack</a></td>
   </tr>
 
   <tr>

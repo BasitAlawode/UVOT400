@@ -10,7 +10,7 @@ from sympy import true
 warnings.filterwarnings("ignore")
 
 import os
-#os.environ["CUDA_VISIBLE_DEVICES"]="1"
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
 
 import argparse
 
@@ -35,6 +35,10 @@ base_dir = os.getcwd()
 dataset_names = ["UTB400"]           # Whole dataset
 dataset_names = ["UTB400_test"]      # Test dataset only
 
+datasets_dir = "testing_datasets" # Testing Datasets dir
+trackers_results_dir = "trackers_results"  # Tracker results dir 
+trackers_time_dir = "trackers_times" # Tracker tracking time dir 
+
 #====== Attribute Evaluation =========
 #dataset_names = ["UTB180", "UOT100", "UTB_clear", "UTB_unclear", "UTB_DF", "UTB_FM", \
 #        "UTB_FO", "UTB_LR", "UTB_MB", "UTB_OV", "UTB_PO", "UTB_SO", "UTB_SV"]
@@ -45,12 +49,13 @@ trackers_results_dir = "trackers_results"  # Tracker results path
 trackers = ["SiamFC", "SiamRPN", "SiamMASK", "SiamBAN", "SiamCAR", "ATOM", "DiMP", \
             "PrDiMP", "STARK", "TrTr", "KeepTrack", "TransT", "TrDiMP", "TrSiam", \
             "ToMP", "SiamGAT", "RTS", "LWL", "SiamAttn", "CSWinTT", "SparseTT", \
-            "SiamRPN++-RBO", "ARDiMP", "STMTrack", "AutoMatch"]
+            "SiamRPN++-RBO", "ARDiMP", "STMTrack", "AutoMatch", "OSTrack", "UOSTrack"]
 #=================================================================================
 
 num = 1
 show_video_level, plot_success_precision, norm_precision = False, True, True
 show_top = 25   # Top number of trackers to plot
+show_fps = True  # Display trackers number of frames per second
 legend_cols = 1   # Number of legend columns for display
 compute_ao = False
 save_excel = False
@@ -60,6 +65,7 @@ def main(base_dir, datasets_dir, dataset_name, trackers_results_dir, trackers, n
         num = min(num, len(trackers))
 
         trackers_results_path = os.path.join(base_dir, trackers_results_dir, dataset_name)
+        trackers_time_path = os.path.join(base_dir, trackers_time_dir, dataset_name)
         dataset_root = os.path.join(base_dir, datasets_dir, dataset_name)
 
         # Create JSON file for the dataset if it does not exist
@@ -80,8 +86,11 @@ def main(base_dir, datasets_dir, dataset_name, trackers_results_dir, trackers, n
         for tracker in trackers:
                 if not os.path.exists(os.path.join(trackers_results_path, tracker)):
                         os.makedirs(os.path.join(trackers_results_path, tracker))
+                        os.makedirs(os.path.join(trackers_time_path, tracker))
+                        
                 for i, video_name in enumerate(dataset_json.keys()):
                         pred_bbox_path = os.path.join(trackers_results_path, tracker, f"{video_name}.txt")
+                        track_time_path = os.path.join(trackers_time_path, tracker, f"{video_name}_time.txt")
                         if not os.path.exists(pred_bbox_path):
                                 #Run tracker for the video and save it in tracker result directory
                                 print(f'{tracker} tracker results for {video_name} ({i+1}/{len(dataset_json.keys())}) of {dataset_name} does not exist')
@@ -89,10 +98,13 @@ def main(base_dir, datasets_dir, dataset_name, trackers_results_dir, trackers, n
                                 video_details = dataset_json[video_name]
                                 
                                 # Obtain list of bounding boxes
-                                pred_bboxes = track_video(video_details, tracker, base_dir, dataset_name)
+                                pred_bboxes, track_time = track_video(video_details, tracker, base_dir, dataset_name)
                                 with open(pred_bbox_path, "w") as f:    # Save bounding boxes
                                         for pred_bbox in pred_bboxes:
                                                 f.write(f"{pred_bbox[0]}\t{pred_bbox[1]}\t{pred_bbox[2]}\t{pred_bbox[3]}\n")
+                                with open(track_time_path, "w") as f:    # Save tracking time
+                                        for t in track_time:
+                                                f.write(f"{t}\n")
                                 print('.....Done.')
                                  
         # Create dataset and set the trackers
@@ -124,18 +136,25 @@ def main(base_dir, datasets_dir, dataset_name, trackers_results_dir, trackers, n
                                 norm_precision_ret.update(ret)
 
         # Show results
-        benchmark.show_result(success_ret, precision_ret, norm_precision_ret,
-                        show_video_level=show_video_level)
+        fps_ret = None
+        if show_fps:
+                from main_eval_fps import get_trackers_fps
+                fps_ret = get_trackers_fps(trackers)
+        benchmark.show_result(success_ret, precision_ret, 
+                              norm_precision_ret, fps_ret=fps_ret, 
+                              show_video_level=show_video_level)
 
-        attr_display = "UW-VOT400" if dataset_name == "UTB400" else "ALL"
+        attr_display = "UVOT400" if dataset_name == "UTB400" else "ALL"
         # Plottings
         if not os.path.exists(os.path.join(trackers_results_path, "plots")):
                 os.makedirs(os.path.join(trackers_results_path, "plots"))
         if plot_success_precision:
                 videos = [k for k in dataset_json.keys()]
-                draw_success_precision(success_ret, dataset_name, videos, attr_display, \
-                         precision_ret=precision_ret, norm_precision_ret=norm_precision_ret, 
-                         show_top=show_top, legend_cols=legend_cols)
+                draw_success_precision(success_ret, dataset_name, videos, 
+                                       attr_display, precision_ret=precision_ret, 
+                                       norm_precision_ret=norm_precision_ret, 
+                                       show_top=show_top, 
+                                       legend_cols=legend_cols)
         # Save result to excel
         if save_excel:
                 benchmark.save_to_excel(success_ret, 

@@ -98,6 +98,46 @@ def tracker_path_config(tracker_name):
     elif tracker_name == "AutoMatch":
         model_config_path = 'automatch/experiments/AutoMatch.yaml'
         model_path = f'{base_folder}/automatch/AutoMatch.pth'
+    elif tracker_name == "OSTrack":
+        model_config_path = 'vitb_384_mae_ce_32x4_ep300'
+        model_path = f'{base_folder}/ostrack/OSTrack_ep0300.pth.tar'
+    elif tracker_name in ["UOSTrack", "UOSTrack_UIE", "UOSTrack_No_MBPP"]:
+        model_config_path = 'wrfish'
+        model_path = f'{base_folder}/uostrack/OSTrack_ep0300.pth.tar'
+    elif tracker_name == "GRM":
+        model_config_path = 'vitb_256_ep300'
+        model_path = f'{base_folder}/grm/GRM_ep0300.pth.tar'
+    elif tracker_name == "SeqTrack":
+        model_config_path = 'seqtrack_b256'
+        model_path = f'{base_folder}/SeqTrack/SEQTRACK_ep0500.pth.tar'
+    elif tracker_name == "SimTrack":
+        model_config_path = 'baseline'
+        model_path = f'{base_folder}/SimTrack/sim-vit-b-16.pth'
+    elif tracker_name == "AiATrack":
+        model_config_path = 'baseline'
+        model_path = f'{base_folder}/AiATrack/AIATRACK_ep0500.pth.tar'
+    elif tracker_name == "MixFormer":
+        model_config_path = 'baseline'
+        model_path = f'{base_folder}/MixFormer/mixformer_convmae_base_online.pth.tar'
+    elif tracker_name == "SLT-TransT":
+        model_config_path = 'slt_transt'
+        model_path = f'{base_folder}/SLTtrack/slt_transt.pth'
+    elif tracker_name == "MAT":
+        model_config_path = "translate_track"
+        model_path = [f'{base_folder}/MAT/translate_track_common_E300.pth', 
+                      f'{base_folder}/MAT/translate_template_common_pretrain_E500.pth']
+    elif tracker_name == "SwinTrack":
+        model_config_path = tracker_name
+        model_path = f'{base_folder}/SwinTrack/SwinTrack-Base-384.pth'
+    elif tracker_name == "ARTrack":
+        model_config_path = 'artrack_seq_256_full'
+        model_path = f'{base_folder}/ARTrack/ARTrackSeq_ep0060.pth-001.tar'
+    elif tracker_name == "DropTrack":
+        model_config_path = 'vitb_384_mae_ce_32x4_ep300'
+        model_path = f'{base_folder}/DropTrack/DropTrack_k700_800E_alldata.pth.tar'
+    elif tracker_name == "MixFormerV2":
+        model_config_path = '288_depth8_score'
+        model_path = f'{base_folder}/MixFormerV2/mixformerv2_base.pth.tar'
     else:
         raise ValueError('No Matching Tracker Name')
 
@@ -106,10 +146,14 @@ def tracker_path_config(tracker_name):
 
 def build_tracker(model_config_path, model_path, tracker_name):
     if tracker_name == "SiamFC":                                # SiamFC Tracker
+        insert_path(tracker_name.lower())
+        
         from siamfc.siamfc import TrackerSiamFC
         return TrackerSiamFC(model_path), 0
     elif tracker_name == "SiamBAN":                             # SiamBAN Tracker
         # load tracker config
+        insert_path(tracker_name.lower())
+        
         from siamban.core.config import cfg
         from siamban.models.model_builder import ModelBuilder
         from siamban.tracker.tracker_builder import build_tracker
@@ -140,6 +184,8 @@ def build_tracker(model_config_path, model_path, tracker_name):
         model.eval().to(device)
         return build_tracker(model), 0 
     elif tracker_name == "SiamCAR":                         # SiamCar Tracker
+        insert_path(tracker_name.lower())
+        
         from siamcar.pysot.core.config import cfg 
         from siamcar.pysot.models.model_builder import ModelBuilder
         from siamcar.pysot.tracker.siamcar_tracker import SiamCARTracker
@@ -173,6 +219,8 @@ def build_tracker(model_config_path, model_path, tracker_name):
         cfg.TRACK.hanming = False
         return SiamCARTracker(model, cfg.TRACK), hp
     elif tracker_name == "DaSiamRPN":                       # DaSiamRPN Tracker
+        insert_path(None)
+        
         from dasiamrpn.net import SiamRPNvot
         
         model = SiamRPNvot()
@@ -182,11 +230,8 @@ def build_tracker(model_config_path, model_path, tracker_name):
         model.eval().to(device)
         return model, 0
     elif tracker_name == "SiamRPN" or tracker_name == "SiamMASK":   # SiamRPN and SiamMask Trackers
-        import sys
+        insert_path('pysot')
         
-        pp = f'{os.getcwd()}/pysot/'
-        if not pp in sys.path:
-            sys.path.insert(0, pp)
         if 'cfg' in locals():
             del cfg
             
@@ -203,10 +248,10 @@ def build_tracker(model_config_path, model_path, tracker_name):
                 loc: storage.cpu()))
         model.eval().to(device)
         return build_tracker(model), 0 
-    elif tracker_name == "ATOM" or tracker_name == "KYS" or tracker_name == "KeepTrack" or \
-         tracker_name == "DiMP" or tracker_name == "PrDiMP" or tracker_name == "SuperDiMP" or \
-         tracker_name == "ToMP" or tracker_name == "RTS" or tracker_name == "LWL":     # Pytracking trackers
-
+    elif tracker_name in ["ATOM", "KYS", "KeepTrack", "DiMP", "PrDiMP", "SuperDiMP", 
+                          "ToMP", "RTS", "LWL"]:     # Pytracking trackers
+        insert_path(None)
+        
         from pytracking.evaluation import Tracker
 
         t_name = "keep_track" if tracker_name == "KeepTrack" else tracker_name.lower()
@@ -217,14 +262,12 @@ def build_tracker(model_config_path, model_path, tracker_name):
             tracker = Tracker(t_name, model_config_path, display_name=tracker_name)
         return customize_pytracking_tracker(tracker), 0     
     elif tracker_name == "STARK":     # Stark is also based on Pytracking
-        import sys
-        sys.path.insert(0, f'{os.getcwd()}/stark/')
+        insert_path(tracker_name.lower())
         from stark.lib.test.evaluation.tracker import Tracker
         tracker = Tracker("stark_st", model_config_path, 'got', display_name=tracker_name)
         return customize_pytracking_tracker(tracker), 0
     elif tracker_name == "TransT":
-        import sys
-        sys.path.insert(0, f'{os.getcwd()}/transt/')
+        insert_path(tracker_name.lower())
         
         from transt.pysot_toolkit.trackers.tracker import Tracker
         from transt.pysot_toolkit.trackers.net_wrappers import NetWithBackbone
@@ -233,23 +276,13 @@ def build_tracker(model_config_path, model_path, tracker_name):
             exemplar_size=128, instance_size=256)
         return tracker, 0
     elif tracker_name == "TrDiMP" or tracker_name == "TrSiam":
-        import sys
-
-        pp = 'pytracking'
-        if pp in sys.path:
-            sys.path.remove(pp)
-            sys.path.remove('ltr')
-
-        pp = f'{os.getcwd()}/TransformerTrack/'
-        if not pp in sys.path:
-            sys.path.insert(0, pp)
+        insert_path("TransformerTrack")
 
         from TransformerTrack.pytracking.evaluation import Tracker
         tracker = Tracker("trdimp", model_config_path, display_name=tracker_name)
         return customize_pytracking_tracker(tracker), 0
     elif tracker_name == "TrTr":
-        import sys
-        f'{os.getcwd()}/TrTr/'
+        insert_path(tracker_name)
 
         from TrTr.models.tracker import build_tracker as build_baseline_tracker
         from TrTr.models.hybrid_tracker import build_tracker as build_online_tracker
@@ -262,8 +295,7 @@ def build_tracker(model_config_path, model_path, tracker_name):
         return build_baseline_tracker(args.tracker), 0
         #return build_online_tracker(args.tracker), 0
     elif tracker_name == "SiamFCpp":
-        import sys
-        f'{os.getcwd()}/siamfcpp/'
+        insert_path(tracker_name.lower())
 
         from videoanalyst.config.config import cfg as root_cfg, specify_task
         from videoanalyst.model.builder import build as model_builder
@@ -286,8 +318,9 @@ def build_tracker(model_config_path, model_path, tracker_name):
 
         return pipeline, 0
     elif tracker_name == "SparseTT":
-        import sys
-        f'{os.getcwd()}/sparsett/'
+        insert_path(tracker_name.lower())
+        
+        import distutils.version
 
         import os.path as osp
         from videoanalyst.config.config import cfg as root_cfg
@@ -315,8 +348,7 @@ def build_tracker(model_config_path, model_path, tracker_name):
         pipeline.set_device(dev)
         return pipeline, 0
     elif tracker_name == "STMTrack":
-        import sys
-        f'{os.getcwd()}/stmtrack/'
+        insert_path(tracker_name.lower())
 
         import os.path as osp
         from stmtrack.videoanalyst.config.config import cfg as root_cfg
@@ -345,8 +377,7 @@ def build_tracker(model_config_path, model_path, tracker_name):
         pipeline.set_device(dev)
         return pipeline, 0
     elif tracker_name == "STNet":
-        import sys
-        f'{os.getcwd()}/stnet/'
+        insert_path(tracker_name.lower())
 
         import os.path as osp
         from stnet.videoanalyst.config.config import cfg as root_cfg
@@ -371,8 +402,8 @@ def build_tracker(model_config_path, model_path, tracker_name):
         pipeline.set_device(dev)
         return pipeline, 0
     elif tracker_name == "SiamGAT":
-        import sys
-        f'{os.getcwd()}/siamgat/'
+        insert_path(tracker_name.lower())
+        
         from siamgat.pysot.core.config import cfg
         from siamgat.pysot.utils.model_load import load_pretrain
         from siamgat.pysot.models.model_builder_gat import ModelBuilder
@@ -394,8 +425,7 @@ def build_tracker(model_config_path, model_path, tracker_name):
 
         return tracker, 0
     elif tracker_name == "SiamAttn":
-        import sys
-        f'{os.getcwd()}/siamattn/'
+        insert_path(tracker_name.lower())
 
         from siamattn.pysot.core.config import cfg
         from siamattn.pysot.models.model_builder import ModelBuilder
@@ -411,16 +441,15 @@ def build_tracker(model_config_path, model_path, tracker_name):
         tracker = build_tracker(model)
         return tracker, 0
     elif tracker_name == "CSWinTT":     # Stark is also based on Pytracking
-        import sys
-        sys.path.insert(0, f'{os.getcwd()}/cswintt/')
+        insert_path(tracker_name.lower())
+        
         from cswintt.lib.test.evaluation.tracker import Tracker
         tracker = Tracker("cswintt", model_config_path, 'lasot', display_name=tracker_name)
         params = tracker.get_parameters()
         tracker = tracker.create_tracker(params)
         return tracker, 0
     elif tracker_name == "SiamRPN++-RBO":
-        import sys
-        f'{os.getcwd()}/siamrpnpp_rbo/'
+        insert_path("siamrpnpp_rbo")
 
         from siamrpnpp_rbo.pysot.core.config import cfg
         from siamrpnpp_rbo.pysot.models.model_builder import ModelBuilder
@@ -435,8 +464,7 @@ def build_tracker(model_config_path, model_path, tracker_name):
 
         return tracker, 0
     elif tracker_name == "ARDiMP":
-        import sys
-        f'{os.getcwd()}/ardimp/'
+        insert_path(tracker_name.lower())
 
         #from ardimp.demo import get_dimp, get_ar
         # Get DiMP tracker
@@ -459,8 +487,7 @@ def build_tracker(model_config_path, model_path, tracker_name):
         tracker = [dimp_tracker, RF_module]
         return tracker, 0
     elif tracker_name == "AutoMatch":
-        import sys
-        f'{os.getcwd()}/automatch/'
+        insert_path(tracker_name.lower())
 
         import automatch.lib.tracker.sot_tracker as tracker_builder
         import automatch.lib.utils.model_helper as loader
@@ -478,6 +505,191 @@ def build_tracker(model_config_path, model_path, tracker_name):
         siam_net = siam_net.cuda()
         tracker = [siam_net, siam_tracker]
         return tracker, 0
+    elif tracker_name == "OSTrack":   
+        insert_path(tracker_name)
+        
+        from OSTrack.lib.test.evaluation import Tracker
+        
+        tracker = Tracker("ostrack", model_config_path, 'lasot', display_name=tracker_name)
+        params = tracker.get_parameters()
+        params.checkpoint = f'{os.getcwd()}/{model_path}'
+        params.debug = False
+        tracker = tracker.create_tracker(params)
+        
+        return tracker, 0 
+    elif tracker_name in ["UOSTrack", "UOSTrack_UIE", "UOSTrack_No_MBPP"]:   
+        insert_path("UOSTrack")
+        
+        from UOSTrack.lib.test.evaluation import Tracker
+        
+        tracker = Tracker("ostrack", model_config_path, 'lasot', display_name=tracker_name)
+        params = tracker.get_parameters()
+        params.checkpoint = f'{os.getcwd()}/{model_path}'
+        params.debug = False
+
+        tracker = tracker.create_tracker(params)
+        tracker.use_kf = False if tracker_name == "UOSTrack_No_MBPP" else True
+        tracker.use_uie = True if tracker_name == "UOSTrack_UIE" else False
+        
+        return tracker, 0 
+    elif tracker_name == "GRM":   
+        insert_path(tracker_name)
+        
+        from GRM.lib.test.evaluation import Tracker
+        
+        tracker = Tracker("grm", model_config_path, 'lasot', display_name=tracker_name)
+        params = tracker.get_parameters()
+        params.checkpoint = f'{os.getcwd()}/{model_path}'
+        params.debug = False
+        tracker = tracker.create_tracker(params)
+        
+        return tracker, 0 
+    elif tracker_name == "SeqTrack":   
+        insert_path(tracker_name)
+        
+        from SeqTrack.lib.test.evaluation import Tracker
+        
+        tracker = Tracker("seqtrack", model_config_path, 'lasot', display_name=tracker_name)
+        params = tracker.get_parameters()
+        params.checkpoint = f'{os.getcwd()}/{model_path}'
+        params.debug = False
+        tracker = tracker.create_tracker(params)
+        
+        return tracker, 0
+    elif tracker_name == "SimTrack":   
+        insert_path(tracker_name)
+        
+        from SimTrack.lib.test.evaluation import Tracker
+        
+        tracker = Tracker("simtrack", model_config_path, 'lasot', display_name=tracker_name)
+        params = tracker.get_parameters()
+        params.checkpoint = f'{os.getcwd()}/{model_path}'
+        params.debug = False
+        tracker = tracker.create_tracker(params)
+        
+        return tracker, 0
+    elif tracker_name == "AiATrack":   
+        insert_path(tracker_name)
+        
+        from AiATrack.lib.test.evaluation import Tracker
+        
+        tracker = Tracker("aiatrack", model_config_path, 'lasot', display_name=tracker_name)
+        params = tracker.get_parameters()
+        params.checkpoint = f'{os.getcwd()}/{model_path}'
+        params.debug = False
+        tracker = tracker.create_tracker(params)
+        
+        return tracker, 0
+    elif tracker_name == "MixFormer":   
+        insert_path(tracker_name)
+        
+        from MixFormer.lib.test.evaluation import Tracker
+        
+        tracker = Tracker("mixformer_convmae_online", model_config_path, 'lasot', display_name=tracker_name)
+        params = tracker.get_parameters()
+        params.checkpoint = f'{os.getcwd()}/{model_path}'
+        params.debug = False
+        tracker = tracker.create_tracker(params)
+        
+        return tracker, 0
+    elif tracker_name == "SLT-TransT":
+        insert_path("SLTtrack")
+        
+        from SLTtrack.pytracking.evaluation import Tracker
+
+        tracker = Tracker("slt_transt", model_config_path, display_name=tracker_name)
+        return customize_pytracking_tracker(tracker), 0  
+    elif tracker_name == "MAT":
+        insert_path("MAT")
+        
+        import copy
+        from os.path import join as p_join
+        from easydict import EasyDict as Edict
+
+        from MAT.register import path_register as path
+        from MAT.register import exp_register, benchmark_register, data_register
+        from MAT.lib.tester import Tester
+        
+        exp_args: dict = copy.deepcopy(exp_register["translate_track"])
+        exp_args['args'].exp_name = 'translate_track_common'
+
+        tracker_class = exp_args['tracker']
+        exp_args.update({'tracker': Edict()})
+        exp_args['tracker'].update(exp_args['args'].tracker)
+
+        exp_args['tracker'].tracker_class = tracker_class
+        exp_args['tracker'].name = '{}_E{:0>3d}'.format(exp_args['args'].tracker.name, 300)
+        
+        exp_args['tracker'].ckp_path = model_path[0]
+        
+        exp_args['tracker'].hyper = None
+        exp_args['tracker'].longterm = False
+        exp_args['tracker'].vis = False
+        exp_args['tracker'].fp16 = False
+        exp_args['tracker'].visualize = False  # <--- save attention map
+        exp_args['tracker'].template_sf = exp_args['args'].data.template_scale_f
+        exp_args['tracker'].template_sz = exp_args['args'].data.template_size
+        exp_args['tracker'].search_sf = exp_args['args'].data.search_scale_f
+        exp_args['tracker'].search_sz = exp_args['args'].data.search_size
+
+        exp_args.update({'tester': Edict()})
+        exp_args['tester'].benchmark = "lasot"
+        exp_args['tester'].num_process = 0
+        exp_args['tester'].num_gpu = 1
+        
+        exp_args['args']['model']['backbone']['weights'] = model_path[1]
+        
+        tester = Tester(**exp_args)
+        
+        tester.create_tracker()
+        tester.model_to_device()
+        
+        return tester.tracker, 0
+        
+    elif tracker_name == "SwinTrack":
+        insert_path(tracker_name)
+        
+        # Code seems complicated. To do if absolutely necessary!!! 
+        from SwinTrack.core.workaround.numpy import numpy_no_multithreading
+        
+        return None, 0 
+    elif tracker_name == "ARTrack":   
+        insert_path(tracker_name)
+        
+        from ARTrack.lib.test.evaluation import Tracker
+        
+        tracker = Tracker("artrack_seq", model_config_path, 'lasot', display_name=tracker_name)
+        params = tracker.get_parameters()
+        params.checkpoint = f'{os.getcwd()}/{model_path}'
+        params.cfg.MODEL.PRETRAIN_PTH = f'{os.getcwd()}/{model_path}'
+        params.debug = False
+        tracker = tracker.create_tracker(params)
+        
+        return tracker, 0
+    elif tracker_name == "DropTrack":   
+        insert_path(tracker_name)
+        
+        from DropTrack.lib.test.evaluation import Tracker
+        
+        tracker = Tracker("ostrack", model_config_path, 'lasot', display_name=tracker_name)
+        params = tracker.get_parameters()
+        params.checkpoint = f'{os.getcwd()}/{model_path}'
+        params.debug = False
+        tracker = tracker.create_tracker(params)
+        
+        return tracker, 0 
+    elif tracker_name == "MixFormerV2":   
+        insert_path(tracker_name)
+        
+        from MixFormerV2.lib.test.evaluation import Tracker
+        
+        tracker = Tracker("mixformer2_vit_online", model_config_path, 'lasot', display_name=tracker_name)
+        params = tracker.get_parameters()
+        params.checkpoint = f'{os.getcwd()}/{model_path}'
+        params.debug = False
+        tracker = tracker.create_tracker(params)
+        
+        return tracker, 0 
     else:
         raise 'No Matching Tracker Name'
 
@@ -531,3 +743,16 @@ def get_args_parser():
     parser.add_argument('--tracker', action=ActionParser(parser=tracker_args_parser()))
 
     return parser
+
+def insert_path(path_name=None):
+    import sys
+    
+    pp = os.getcwd()
+    pp = f'{pp}/{path_name}/' if path_name is not None else pp
+    
+    to_check = ['transt', 'ltr', 'pytracking']
+    for p in sys.path:
+        if p==pp or any(k in p for k in to_check):
+            sys.path.remove(p)
+    
+    sys.path.insert(0, pp)
