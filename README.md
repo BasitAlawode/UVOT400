@@ -38,7 +38,7 @@
 - [x] Experiment environment creation ([here](README.md/#experiment-environment-setup))
 - [x] Pretrained trackers benchmarking results ([here](1_Benchmarking_README.md))
 - [x] Reproducing our results ([here](1_Benchmarking_README.md/#reproducing-our-results))
-- [x] Provide link to download pretrained trackers models ([here](1_Benchmarking_README.md/#downloading-pre-trained-trackers-models))
+- [x] Provide link to download pretrained trackers models ([here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EiEaxX6XgplLtXsPv95PURUBSNODK-irvo46Jks38-OmjA?e=bF3X59))
 - [x] Provide link to paper ([here](https://arxiv.org/abs/2308.15816))
 - [x] Provide link to attributes file ([here](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=Q3Sa9B)).
 - [x] Benchmarking trackers on custom videos [here](1_Custom_Benchmarking_README.md)

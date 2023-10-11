@@ -292,12 +292,13 @@ Metrics:
 |![UVOT400 Precision Plot](tracker_results/UTB400/plots/precision_plot_UTB400.png) | ![UOT100 Precision Plot](tracker_results/UOT100/plots/precision_plot_UOT100.png) |
 
 
-
 ## Reproducing Our Results
 
-1. For each dataset, we have provided the tracking bounding box of each tracker on each video. This can be found in the [tracker_results](tracker_results/) folder. 
+To reproduce the results in our paper,
 
-2. We have performed all experiments using Microsoft Visual Studio Code editor. 
+1. Setup the experiment environment as described [here](README.md/#experiment-environment-setup). 
+
+2. For each dataset and for each tracker on each video, we have provided the tracking bounding box files in the [tracker_results](tracker_results/) folder. 
 
 3. Open [main_eval.py](main_eval.py) file in your favourite editor. 
 
@@ -308,33 +309,6 @@ python main_eval.py
 ```
 
 NOTE: This will make use of the trackers results files we have provided to generate the above table and plots. 
-
-## Downloading Pre-trained trackers models
-
-We have provided the link to download the pre-trained tracker models utilized in this work below.
-
-[Link to Pre-trained Models](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EiEaxX6XgplLtXsPv95PURUBSNODK-irvo46Jks38-OmjA?e=bF3X59)
-
-1. Check the tracker folder name from the link above.
-2. Navigate to trained_trackers folder.
-3. Create a folder with the same name as the tracker (as seen in the link above).
-4. Download the tracker pre-trained model from the link above and put it in the created folder.
-
-As an example, the structure of the trained_trackers folder should be as below:
-
-  ```
-   ${PROJECT_ROOT}
-    -- trained_trackers
-        -- ardimp
-            |-- ardim tracker model
-        -- automatch
-            |-- automatch tracker model
-        -- cswintt
-            |-- cswintt tracker model
-        ...
-   ```
-
-NOTE: The pretrained models provided in the link above were gotten from the respective tracker repositories.
 
 ## Attribute-wise Performance Evaluation
 

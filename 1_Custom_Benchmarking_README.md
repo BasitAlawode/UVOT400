@@ -4,9 +4,31 @@ To benchmark SOTA trackers on your custom videos:
 
 1. Setup the experiment environment as described [here](README.md/#experiment-environment-setup). 
 
-1. Download the pretrained tracker(s) you want to benchmark on as described [here](1_Benchmarking_README.md/#downloading-pre-trained-trackers-models).
+2. Download the pretrained tracker(s) you want to benchmark on as described below:
 
-2. Put your videos in the testing_datasets folder. 
+ - [Link to Pre-trained Models](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EiEaxX6XgplLtXsPv95PURUBSNODK-irvo46Jks38-OmjA?e=bF3X59)
+ - Check the tracker folder name from the link above.
+ - Navigate to trained_trackers folder.
+ - Create a folder with the same name as the tracker (as seen in the link above).
+ - Download the tracker pre-trained model from the link above and put it in the created folder.
+
+As an example, the structure of the trained_trackers folder should be as below:
+
+  ```
+   ${PROJECT_ROOT}
+    -- trained_trackers
+        -- ardimp
+            |-- ardim tracker model
+        -- automatch
+            |-- automatch tracker model
+        -- cswintt
+            |-- cswintt tracker model
+        ...
+   ```
+
+NOTE: The pretrained models provided in the link above were gotten from the respective tracker repositories.
+
+3. Put your videos in the testing_datasets folder. 
 
 The folder structure should look like this:
 
@@ -39,13 +61,13 @@ The folder structure should look like this:
    ```
 NOTE: Each video's groundtruth_rect file should be of the format **N by [x,y,w,h]** where N is the number of sequence in the video (number of rows in the text file), **[x,y], w, h** denote the coordinate of the top-left corner, width and height of the target bounding-box in each frame respectively.
 
-3. Open [main.py](main_eval.py) in your favourite editor. 
+4. Open [main.py](main_eval.py) in your favourite editor. 
 
-4. Change dataset_names list in line 35-36 to your_video_parent_folder name.
+5. Change dataset_names list in line 35-36 to your_video_parent_folder name.
 
-5. Also, edit lines 45-48 to reflect the trackers you're interested in.
+6. Also, edit lines 45-48 to reflect the trackers you're interested in.
 
-6. Then, run. 
+7. Then, run. 
 
 ```bash
 python main_eval.py
@@ -54,20 +76,130 @@ python main_eval.py
 7. Tracking results will be shown in the terminal. Plots will be found in tracking_results/your_video_parent_folder/plot.
 
 
-## List of Available Trackers
+## List of Currently Available Trackers
 
-Here is a list of currently available trackers.
+Below is a list of currently available trackers (Will be updated regularly).
 
-1. Discriminative Correlation Filter-based Trackers:
-   - [ATOM](https://github.com/visionml/pytracking), [DiMP](https://github.com/visionml/pytracking), [KYS](https://github.com/visionml/pytracking), [PrDiMP](https://github.com/visionml/pytracking), [ARDiMP](https://github.com/MasterBin-IIAU/AlphaRefine)
-2. Deep Siamese Trackers
-   - [SiamFC](https://github.com/got-10k/siamfc), [SiamRPN](https://github.com/STVIR/pysot), [SiamMask](https://github.com/STVIR/pysot), [SiamCAR](https://github.com/ohhhyeahhh/SiamCAR), [SiamBAN](https://github.com/hqucv/siamban), [SiamGAT](https://github.com/ohhhyeahhh/SiamGAT), [SiamAttn](https://github.com/msight-tech/research-siamattn), [RBO-SiamRPN++](https://github.com/sansanfree/RBO), , [KeepTrack](https://github.com/visionml/pytracking)
-3. Transformer-driven Trackers
-   - [TrSiam](https://github.com/594422814/TransformerTrack), [TrDiMP](https://github.com/594422814/TransformerTrack), [STMTrack](https://github.com/fzh0917/STMTrack), [TrTr](https://github.com/tongtybj/TrTr), [TransT](https://github.com/chenxin-dlut/TransT), [Stark](https://github.com/researchmm/Stark), [ToMP](https://github.com/visionml/pytracking), [RTS](https://github.com/visionml/pytracking), [CSWinTT](https://github.com/SkyeSong38/CSWinTT), [SparseTT](https://github.com/fzh0917/SparseTT), [AutoMatch](https://github.com/JudasDie/SOTS)
+<table>
+  <tr>
+    <th>Venue & Year</th>
+    <th>Name & Link</th>
+    <th style="border-right:1px solid white"></th>
+    <th>Venue & Year</th>
+    <th>Name & Link</th>
+  </tr>
 
-NOTE: 
-1. We have pulled the trackers from their respective github repositories.
-2. More trackers will be added periodically.
+  <tr>
+    <td>CVPR 2022</td>
+    <td><a href="https://github.com/visionml/pytracking">ToMP</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>ECCV 2022</td>
+    <td><a href="https://github.com/visionml/pytracking">RTS</a></td>
+  </tr>
+
+  <tr>
+    <td>ICCV 2022</td>
+    <td><a href="https://github.com/SkyeSong38/CSWinTT">CSWinTT</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>IJCAI 2022</td>
+    <td><a href="https://github.com/fzh0917/SparseTT">SparseTT</a></td>
+  </tr>
+
+  <tr>
+    <td>ICCV 2022</td>
+    <td><a href="https://github.com/sansanfree/RBO">RBO-SiamRPN++</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>CVPR 2021</td>
+    <td><a href="https://github.com/MasterBin-IIAU/AlphaRefine">ARDiMP</a></td>
+  </tr>
+
+  <tr>
+    <td>ICCV 2021</td>
+    <td><a href="https://github.com/JudasDie/SOTS">AutoMatch</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>CVPR 2021</td>
+    <td><a href="https://github.com/fzh0917/STMTrack">STMTrack</a></td>
+  </tr>
+
+  <tr>
+    <td>ICCV 2021</td>
+    <td><a href="https://github.com/ohhhyeahhh/SiamGAT">SiamGAT</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>ICCV 2021</td>
+    <td><a href="https://github.com/visionml/pytracking">KeepTrack</a></td>
+  </tr>
+
+  <tr>
+    <td>CVPR 2021</td>
+    <td><a href="https://github.com/chenxin-dlut/TransT">TransT</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>CVPR 2021</td>
+    <td><a href="https://github.com/tongtybj/TrTr">TrTr</a></td>
+  </tr>
+
+  <tr>
+    <td>CVPR 2021</td>
+    <td><a href="https://github.com/594422814/TransformerTrack">TrSiam</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>CVPR 2021</td>
+    <td><a href="https://github.com/594422814/TransformerTrack">TrDiMP</a></td>
+  </tr>
+
+  <tr>
+    <td>ICCV 2021</td>
+    <td><a href="https://github.com/researchmm/Stark">STARK</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>CVPR 2020</td>
+    <td><a href="https://github.com/visionml/pytracking">PrDiMP</a></td>
+  </tr>
+
+  <tr>
+    <td>CVPR 2020</td>
+    <td><a href="https://github.com/hqucv/siamban">SiamBAN</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>CVPR 2020</td>
+    <td><a href="https://github.com/ohhhyeahhh/SiamCAR">SiamCAR</a></td>
+  </tr>
+
+  <tr>
+    <td>ECCV 2020</td>
+    <td><a href="https://github.com/visionml/pytracking">KYS</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>ECCV 2020</td>
+    <td><a href="https://github.com/visionml/pytracking">LWL</a></td>
+  </tr>
+
+  <tr>
+    <td>CVPR 2020</td>
+    <td><a href="https://github.com/visionml/pytracking">TrSiam</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>CVPR 2020</td>
+    <td><a href="https://github.com/visionml/pytracking">TrDiMP</a></td>
+  </tr>
+  <tr>
+    <td>CVPR 2019</td>
+    <td><a href="https://github.com/STVIR/pysot">SiamRPN</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>CVPR 2020</td>
+    <td><a href="https://github.com/msight-tech/research-siamattn">SiamAttn</a></td>
+  </tr>
+  <tr>
+    <td>ICCV 2019</td>
+    <td><a href="https://github.com/visionml/pytracking">DiMP</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>CVPR 2019</td>
+    <td><a href="https://github.com/visionml/pytracking">ATOM</a></td>
+  </tr>
+  <tr>
+    <td>ECCV 2016</td>
+    <td><a href="https://github.com/got-10k/siamfc">SiamFC</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>CVPR 2019</td>
+    <td><a href="https://github.com/STVIR/pysot">SiamMASK</a></td>
+  </tr>
+</table>
+
+NOTE: We have pulled the trackers from their respective github repositories.
 
 
 ## Citation
