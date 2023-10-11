@@ -336,61 +336,6 @@ As an example, the structure of the trained_trackers folder should be as below:
 
 NOTE: The pretrained models provided in the link above were gotten from the respective tracker repositories.
 
-
-## Running the Pretrained Trackers on Custom Videos
-
-If you would like to run the trackers on your videos, you will need to do the following:
-
-1. Download the pretrained tracker(s) you want to evaluate on as described [above](1_Benchmarking_README.md/#downloading-pre-trained-trackers-models).
-
-2. Put your videos in the testing_datasets folder. 
-
-The folder structure should look like this:
-
-  ```
-   ${PROJECT_ROOT}
-    -- testing_datasets
-        -- Your_Videos_Parent_Folder
-          -- your_video_1_folder
-            --imgs
-              |-- 0001.jpg
-              |-- 0002.jpg
-              |-- 0003.jpg
-              ...
-            -- groundtruth_rect.txt
-          -- your_video_2_folder
-            --imgs
-              |-- 0001.jpg
-              |-- 0002.jpg
-              |-- 0003.jpg
-              ...
-            -- groundtruth_rect.txt
-          -- your_video_3_folder
-            --imgs
-              |-- 0001.jpg
-              |-- 0002.jpg
-              |-- 0003.jpg
-              ...
-            -- groundtruth_rect.txt
-          ...
-   ```
-NOTE: Each video's groundtruth_rect file should be of the format **N by [x,y,w,h]** where N is the number of sequence in the video (number of rows in the text file), **[x,y], w, h** denote the coordinate of the top-left corner, width and height of the target bounding-box in each frame respectively.
-
-3. Open [main.py](main_eval.py) in your favourite editor. 
-
-4. Change dataset_names list in line 35-36 to your_video_parent_folder name.
-
-5. Also, edit lines 45-48 to reflect the trackers you're interested in.
-
-6. Then, run. 
-
-```bash
-python main_eval.py
-```
-
-7. Tracking results will be shown in the terminal. Plots will be found in tracking_results/your_video_parent_folder/plot.
-
-
 ## Attribute-wise Performance Evaluation
 
 1. In progress...

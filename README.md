@@ -1,5 +1,7 @@
 # Improving Underwater Visual Tracking With a Large Scale Dataset and Image Enhancement
 
+ - This repository is the official implementation of our work on **Improving Underwater Visual Tracking With a Large Scale Dataset and Image Enhancement**.
+
 [Paper ArXiv Link](https://arxiv.org/abs/2308.15816) | [Dataset](./README.md/#our-dataset-uvot400) | [Thumbnails](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp)
 
 
@@ -16,14 +18,15 @@
   </tr>
 </table>
 
-
-## About this repository
-
-This repository contains all the necessary codes, and links detailing our work on **Improving Underwater Visual Tracking With a Large Scale Dataset and Image Enhancement**.
-
 ![Tracking Sample](images/sample_tracking.png)
 
+## Benchmarking SOTA Trackers on Custom Videos
+
+ - This repository also allows you to quickly benchmark SOTA trackers on your custom videos [see here](1_Custom_Benchmarking_README.md). 
+
+
 ## News
+- Oct. 11, 2023: Quickly Benchmark SOTA trackers on your custom videos. 
 - Aug. 31, 2023: ArXiv Link to paper provided
 - Aug. 30, 2023: Paper submitted for publication
 - Aug. 07, 2023: Repository made public.
@@ -38,7 +41,7 @@ This repository contains all the necessary codes, and links detailing our work o
 - [x] Provide link to download pretrained trackers models ([here](1_Benchmarking_README.md/#downloading-pre-trained-trackers-models))
 - [x] Provide link to paper ([here](https://arxiv.org/abs/2308.15816))
 - [x] Provide link to attributes file ([here](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=Q3Sa9B)).
-- [x] Running pretrained trackers on custom videos [here](1_Benchmarking_README.md/#running-the-pretrained-trackers-on-custom-videos)
+- [x] Benchmarking trackers on custom videos [here](1_Custom_Benchmarking_README.md)
 - [x] Provide dataset thumbnails [here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp). 
 - [ ] Attribute-wise evaluation results [here](1_Benchmarking_README.md/#attribute-wise-performance-evaluation)
 - [ ] Fine-tuned trackers benchmarking besults
@@ -125,7 +128,7 @@ For our experiments, we have utilized the success, precision, and normalized pre
 
 ## Citation
 
-If our work is useful for your research, please consider citing:
+If you find our work useful for your research, please consider citing:
 
 ```bibtex
 @article{Alawode2023,
@@ -137,5 +140,12 @@ title = {{Improving Underwater Visual Tracking With a Large Scale Dataset and Im
 url = {http://arxiv.org/abs/2308.15816},
 volume = {14},
 year = {2023}
+}
+
+@inproceedings{alawode2022utb180,
+  title={UTB180: A High-quality Benchmark for Underwater Tracking},
+  author={Alawode, Basit and Guo, Yuhang and Ummar, Mehnaz and Werghi, Naoufel and Dias, Jorge and Mian, Ajmal and Javed, Sajid},
+  booktitle={{ACCV}},
+  year={2022}
 }
 ```
