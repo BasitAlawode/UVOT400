@@ -298,17 +298,13 @@ To reproduce the results in our paper,
 
 1. Setup the experiment environment as described [here](README.md/#experiment-environment-setup). 
 
-2. For each dataset and for each tracker on each video, we have provided the tracking bounding box files in the [tracker_results](tracker_results/) folder. 
+2. Download our dataset from [here](README.md/#links-to-datasets) and put it in testing_datasets folder.
 
-3. Open [main_eval.py](main_eval.py) file in your favourite editor. 
+3. Then follow the steps described [here](1_Custom_Benchmarking_README.md/#benchmarking-trackers-on-custom-videos) to run the trackers on the dataset. 
 
-4. Using the created environment, run the file.
+3. Results will be located inside [tracker_results](tracker_results/) folder.
 
-```bash
-python main_eval.py
-```
-
-NOTE: This will make use of the trackers results files we have provided to generate the above table and plots. 
+NOTE: The above steps can also be performed for any other tracking dataset.
 
 ## Attribute-wise Performance Evaluation
 

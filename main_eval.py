@@ -32,24 +32,24 @@ from basit_codes.draw_success_precision import draw_success_precision
 
 base_dir = os.getcwd()
 
-dataset_names = ["UTB400"]           # Whole dataset
-dataset_names = ["UTB400_test"]      # Test dataset only
+dataset_names = ["UTB400", "UTB400_test"]  # Whole dataset or Test dataset only
 
 datasets_dir = "testing_datasets" # Testing Datasets dir
 trackers_results_dir = "trackers_results"  # Tracker results dir 
 trackers_time_dir = "trackers_times" # Tracker tracking time dir 
 
 #====== Attribute Evaluation =========
-#dataset_names = ["UTB180", "UOT100", "UTB_clear", "UTB_unclear", "UTB_DF", "UTB_FM", \
+#dataset_names = ["UTB180", "UOT100", "UTB_clear", "UTB_unclear", "UTB_DF", "UTB_FM",
 #        "UTB_FO", "UTB_LR", "UTB_MB", "UTB_OV", "UTB_PO", "UTB_SO", "UTB_SV"]
 
 datasets_dir = "testing_datasets" # Testing Datasets dir
 trackers_results_dir = "trackers_results"  # Tracker results path 
 
-trackers = ["SiamFC", "SiamRPN", "SiamMASK", "SiamBAN", "SiamCAR", "ATOM", "DiMP", \
-            "PrDiMP", "STARK", "TrTr", "KeepTrack", "TransT", "TrDiMP", "TrSiam", \
-            "ToMP", "SiamGAT", "RTS", "LWL", "SiamAttn", "CSWinTT", "SparseTT", \
-            "SiamRPN++-RBO", "ARDiMP", "STMTrack", "AutoMatch", "OSTrack", "UOSTrack"]
+trackers = ["SiamFC", "SiamRPN", "SiamMASK", "SiamBAN", "SiamCAR", "ATOM", "DiMP",
+            "PrDiMP", "STARK", "TrTr", "KeepTrack", "TransT", "TrDiMP", "TrSiam",
+            "ToMP", "SiamGAT", "RTS", "LWL", "SiamAttn", "CSWinTT", "SparseTT",
+            "SiamRPN++-RBO", "ARDiMP", "STMTrack", "AutoMatch", "OSTrack", "UOSTrack",
+            "GRM", "SimTrack"]
 #=================================================================================
 
 num = 1

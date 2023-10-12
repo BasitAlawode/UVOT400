@@ -25,8 +25,9 @@
  - This repository also allows you to quickly benchmark SOTA trackers on your custom videos [see here](1_Custom_Benchmarking_README.md). 
 
 
-## News
-- Oct. 11, 2023: Quickly Benchmark SOTA trackers on your custom videos. 
+## News:
+- Oct. 12, 2023: Added two new trackers [see here](1_Custom_Benchmarking_README.md).
+- Oct. 05, 2023: Quickly Benchmark SOTA trackers on your custom videos. 
 - Aug. 31, 2023: ArXiv Link to paper provided
 - Aug. 30, 2023: Paper submitted for publication
 - Aug. 07, 2023: Repository made public.
@@ -44,7 +45,7 @@
 - [x] Benchmarking trackers on custom videos [here](1_Custom_Benchmarking_README.md)
 - [x] Provide dataset thumbnails [here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp). 
 - [ ] Attribute-wise evaluation results [here](1_Benchmarking_README.md/#attribute-wise-performance-evaluation)
-- [ ] Fine-tuned trackers benchmarking besults
+- [ ] Fine-tuned trackers benchmarking results
 - [ ] Enhanced frames trackers benchmarking results
 
 ## Our Main Contributions
