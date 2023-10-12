@@ -7,7 +7,7 @@ rc('text', usetex=True)
 import sys
 sys.path.append("toolkit")
 
-from basit_codes.draw_utils import COLOR, LINE_STYLE
+from basit_codes.utils import COLOR, LINE_STYLE
 
 def draw_success_precision(success_ret, name, videos, attr, precision_ret=None,
         norm_precision_ret=None, bold_name=None, axis=[0, 1], show_top=15, legend_cols=1):

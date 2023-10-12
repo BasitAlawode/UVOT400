@@ -29,6 +29,7 @@ from basit_codes.track_video import track_video
 
 #from toolkit.visualization import draw_success_precision
 from basit_codes.draw_success_precision import draw_success_precision
+from basit_codes.utils import get_trackers_fps
 
 base_dir = os.getcwd()
 
@@ -138,8 +139,7 @@ def main(base_dir, datasets_dir, dataset_name, trackers_results_dir, trackers, n
         # Show results
         fps_ret = None
         if show_fps:
-                from main_eval_fps import get_trackers_fps
-                fps_ret = get_trackers_fps(trackers)
+                fps_ret = get_trackers_fps(trackers, trackers_time_dir, dataset_name)
         benchmark.show_result(success_ret, precision_ret, 
                               norm_precision_ret, fps_ret=fps_ret, 
                               show_video_level=show_video_level)
