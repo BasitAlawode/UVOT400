@@ -38,6 +38,7 @@ dataset_names = ["UTB400", "UTB400_test"]  # Whole dataset or Test dataset only
 datasets_dir = "testing_datasets" # Testing Datasets dir
 trackers_results_dir = "trackers_results"  # Tracker results dir 
 trackers_time_dir = "trackers_times" # Tracker tracking time dir 
+gt_filename = "groundtruth_rect.txt"
 
 #====== Attribute Evaluation =========
 #dataset_names = ["UTB180", "UOT100", "UTB_clear", "UTB_unclear", "UTB_DF", "UTB_FM",
@@ -77,7 +78,7 @@ def main(base_dir, datasets_dir, dataset_name, trackers_results_dir, trackers, n
                         create_json(f"{dataset_root}/*/", dataset_name, gt_file_name="groundtruth.txt", \
                                 convert_region=true, delimiter=',', frames_folder_name="color")
                 else:
-                        create_json(f"{dataset_root}/*/", dataset_name)
+                        create_json(f"{dataset_root}/*/", dataset_name, gt_filename)
                 print("JSON created and saved.")
 
         #Check if trackers results have been obtained, otherwise obtain it.

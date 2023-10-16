@@ -102,6 +102,22 @@ Below is a list of currently available trackers (Will be updated regularly).
   </tr>
 
   <tr>
+    <td>NeurlPS 2023</td>
+    <td><a href="https://github.com/MCG-NJU/MixFormerV2">MixFormerV2</a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>ECCV 2022</td>
+    <td><a href="https://github.com/MCG-NJU/MixFormer">MixFormer</a></td>
+  </tr>
+
+  <tr>
+    <td></td>
+    <td><a href=""></a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>ECCV 2022</td>
+    <td><a href="https://github.com/Little-Podi/AiATrack">AiATrack</a></td>
+  </tr>
+
+  <tr>
     <td>ECCV 2022</td>
     <td><a href="https://github.com/LPXTT/SimTrack">SimTrack</a></td>
     <td style="border-right:1px solid white"></td>

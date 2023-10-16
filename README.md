@@ -26,7 +26,8 @@
 
 
 ## News:
-- Oct. 12, 2023: Added two new trackers [see here](1_Custom_Benchmarking_README.md).
+- Oct. 16, 2023: Added three more trackers (MixFormer, MixFormerV2, and AiATrack) [here](1_Custom_Benchmarking_README.md).
+- Oct. 12, 2023: Added two new trackers (SimTrack and GRM).
 - Oct. 05, 2023: Quickly Benchmark SOTA trackers on your custom videos. 
 - Aug. 31, 2023: ArXiv Link to paper provided
 - Aug. 30, 2023: Paper submitted for publication
@@ -48,7 +49,7 @@
 - [ ] Fine-tuned trackers benchmarking results
 - [ ] Enhanced frames trackers benchmarking results
 
-## Our Main Contributions
+## Our Main Paper Contributions
 
 1. A large and diverse high-quality UVOT400 benchmark dataset is presented, consisting of 400 sequences and 275,000 manually annotated bounding-box frames, introducing 17 distinct tracking attributes with diverse underwater creatures as targets.
 
