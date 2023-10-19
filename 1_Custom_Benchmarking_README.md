@@ -94,6 +94,14 @@ Below is a list of currently available trackers (Will be updated regularly).
   </tr>
 
   <tr>
+    <td></td>
+    <td><a href=""></a></td>
+    <td style="border-right:1px solid white"></td>
+    <td>CVPR 2023</td>
+    <td><a href="https://github.com/jimmy-dq/DropTrack">DropTrack</a></td>
+  </tr>
+
+  <tr>
     <td>CVPR 2023</td>
     <td><a href="https://github.com/Little-Podi/GRM">GRM</a></td>
     <td style="border-right:1px solid white"></td>
@@ -110,8 +118,8 @@ Below is a list of currently available trackers (Will be updated regularly).
   </tr>
 
   <tr>
-    <td></td>
-    <td><a href=""></a></td>
+    <td>ECCV 2022</td>
+    <td><a href="https://github.com/byminji/SLTtrack/tree/master">SLT-TransT</a></td>
     <td style="border-right:1px solid white"></td>
     <td>ECCV 2022</td>
     <td><a href="https://github.com/Little-Podi/AiATrack">AiATrack</a></td>
