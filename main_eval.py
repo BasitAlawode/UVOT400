@@ -51,7 +51,8 @@ trackers = ["SiamFC", "SiamRPN", "SiamMASK", "SiamBAN", "SiamCAR", "ATOM", "DiMP
             "PrDiMP", "STARK", "TrTr", "KeepTrack", "TransT", "TrDiMP", "TrSiam",
             "ToMP", "SiamGAT", "RTS", "LWL", "SiamAttn", "CSWinTT", "SparseTT",
             "SiamRPN++-RBO", "ARDiMP", "STMTrack", "AutoMatch", "OSTrack", "UOSTrack",
-            "GRM", "SimTrack"]
+            "GRM", "SimTrack", "SLT-TransT", "MixFormer", "MixFormerV2",
+            "AiATrack", "DropTrack", "MAT", "ARTrack"]
 #=================================================================================
 
 num = 1

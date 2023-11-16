@@ -26,8 +26,9 @@
 
 
 ## News:
-- Oct. 19, 2023: Added two more trackers (SLT-Track and DropTrack) [here](1_Custom_Benchmarking_README.md).
-- Oct. 16, 2023: Added three more trackers (MixFormer, MixFormerV2, and AiATrack)..
+- Nov. 16, 2023: Added two more trackers (ARTrack, MAT)[here](1_Custom_Benchmarking_README.md).
+- Oct. 19, 2023: Added two more trackers (SLT-Track and DropTrack).
+- Oct. 16, 2023: Added three more trackers (MixFormer, MixFormerV2, and AiATrack).
 - Oct. 12, 2023: Added two new trackers (SimTrack and GRM).
 - Oct. 05, 2023: Quickly Benchmark SOTA trackers on your custom videos. 
 - Aug. 31, 2023: ArXiv Link to paper provided

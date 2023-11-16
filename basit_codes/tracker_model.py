@@ -138,6 +138,15 @@ def tracker_path_config(tracker_name):
     elif tracker_name == "MixFormerV2":
         model_config_path = '288_depth8_score'
         model_path = f'{base_folder}/MixFormerV2/mixformerv2_base.pth.tar'
+    elif tracker_name == "CTTrack":
+        model_config_path = 'baseline_L'
+        model_path = f'{base_folder}/CTTrack/CTTrack-L.pth.tar'
+    elif tracker_name == "ROMTrack":
+        model_config_path = 'baseline_384_stage2'
+        model_path = f'{base_folder}/ROMTrack/ROMTrack-384_epoch0100.pth.tar'
+    elif tracker_name == "AbaViTrack":
+        model_config_path = None
+        model_path = f'{base_folder}/AbaViTrack/ckpt.pth'
     else:
         raise ValueError('No Matching Tracker Name')
 
@@ -649,6 +658,9 @@ def build_tracker(model_config_path, model_path, tracker_name):
     elif tracker_name == "SwinTrack":
         insert_path(tracker_name)
         
+        #python main.py SwinTrack Tiny --weight_path /path/to/weigth_file.pth --mixin_config evaluation.yaml --output_dir /path/to/output
+
+        
         # Code seems complicated. To do if absolutely necessary!!! 
         from SwinTrack.core.workaround.numpy import numpy_no_multithreading
         
@@ -689,7 +701,44 @@ def build_tracker(model_config_path, model_path, tracker_name):
         params.debug = False
         tracker = tracker.create_tracker(params)
         
+        return tracker, 0
+    elif tracker_name == "CTTrack":   
+        insert_path(tracker_name)
+        
+        from CTTrack.lib.test.tracker import Tracker
+        
+        tracker = Tracker("cttrack", model_config_path, 'lasot', display_name=tracker_name)
+        params = tracker.get_parameters()
+        params.checkpoint = f'{os.getcwd()}/{model_path}'
+        params.debug = False
+        tracker = tracker.create_tracker(params)
+        
         return tracker, 0 
+    elif tracker_name == "ROMTrack":   
+        insert_path(tracker_name)
+        
+        from ROMTrack.lib.test.evaluation.tracker import Tracker
+        
+        tracker = Tracker("ROMTrack", model_config_path, 'lasot', display_name=tracker_name)
+        params = tracker.get_parameters()
+        params.checkpoint = f'{os.getcwd()}/{model_path}'
+        params.debug = False
+        params.vis_attn = 0
+        tracker = tracker.create_tracker(params)
+        
+        return tracker, 0 
+    elif tracker_name == "AbaViTrack":
+        insert_path(tracker_name)
+        
+        from AbaViTrack.Tracker import Tracker
+        from AbaViTrack.demo import build_model
+        
+        model = build_model()
+        model.load_state_dict(torch.load(model_path, map_location='cpu'), strict=False)
+        
+        tracker = Tracker(model)
+        
+        return tracker, 0
     else:
         raise 'No Matching Tracker Name'
 

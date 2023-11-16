@@ -63,7 +63,8 @@ def track(tracker, tracker_name, img_index, image, hp, init_rect=None, state=Non
             state = tracker.initialize(image, _build_init_info(init_rect))
         elif tracker_name in ["STARK", "CSWinTT", "OSTrack", "UOSTrack", "UOSTrack_UIE",
                               "UOSTrack_No_MBPP", "GRM", "SeqTrack", "SimTrack", "AiATrack",
-                              "MixFormer", "ARTrack", "DropTrack", "MixFormerV2"]:
+                              "MixFormer", "ARTrack", "DropTrack", "MixFormerV2", "CTTrack",
+                              "ROMTrack"]:
             def _build_init_info(box):
                 return {'init_bbox': box}
             tracker.initialize(image, _build_init_info(init_rect))
@@ -86,6 +87,8 @@ def track(tracker, tracker_name, img_index, image, hp, init_rect=None, state=Non
             tracker[1].init(init_inputs)  # init tracker
         elif tracker_name == "MAT":
             tracker.init(image, init_rect, language=None)  # [x y w h]
+        elif tracker_name == "AbaViTrack":
+            tracker.initialize(image, init_rect)
         else:     
             # For siamcar, siamrpn, siammask, siamban, TrTr, siamfc, siamfcpp , siamgat, siamattn, siamrpn++-rbo 
             tracker.init(image, init_rect)
@@ -114,7 +117,8 @@ def track(tracker, tracker_name, img_index, image, hp, init_rect=None, state=Non
             pred_bbox = [int(s) for s in state['target_bbox'][1]]
         elif tracker_name in ["STARK", "CSWinTT", "OSTrack", "UOSTrack", "UOSTrack_UIE",
                               "UOSTrack_No_MBPP", "GRM", "SeqTrack", "SimTrack", "AiATrack",
-                              "MixFormer", "ARTrack", "DropTrack", "MixFormerV2"]:
+                              "MixFormer", "ARTrack", "DropTrack", "MixFormerV2", "CTTrack",
+                              "ROMTrack"]:
             state = tracker.track(image)
             pred_bbox = [int(s) for s in state['target_bbox']]
         elif tracker_name in ["TransT"]:
@@ -148,6 +152,9 @@ def track(tracker, tracker_name, img_index, image, hp, init_rect=None, state=Non
             pred_bbox = box_helper.cxy_wh_2_rect(state['pos'], state['sz'])
         elif tracker_name == "MAT":
             predict_box, _, _ = tracker.track(image, visualize=False)  # [x y w h]
+            pred_bbox = [int(s) for s in predict_box]
+        elif tracker_name == "AbaViTrack":
+            predict_box = tracker.track(image)  # [x y w h]
             pred_bbox = [int(s) for s in predict_box]
         else:       # For siamcar, siamrpn, siammask, siamban, TrTr, siamgat, siamattn, siamrpn++-rbo
             if tracker_name == "SiamCAR":

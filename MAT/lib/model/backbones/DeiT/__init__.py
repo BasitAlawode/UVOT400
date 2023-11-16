@@ -1,0 +1,1 @@
+from .deit_mae_translate_template import deit_tiny_distilled_patch16_224, deit_small_distilled_patch16_224
