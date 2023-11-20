@@ -138,7 +138,7 @@ If you find our work useful for your research, please consider citing:
 @article{Alawode2023,
 archivePrefix = {arXiv},
 arxivId = {2308.15816},
-author = {Alawode, Basit and Dharejo, Fayaz Ali and Ummar, Mehnaz and Guo, Yuhang and Mahmood, Arif and Werghi, Naoufel and Khan, Fahad Shahbaz and Javed, Sajid},
+author = {Alawode, Basit and Dharejo, Fayaz Ali and Ummar, Mehnaz and Guo, Yuhang and Mahmood, Arif and Werghi, Naoufel and Khan, Fahad Shahbaz and Matas, Jiri and Javed, Sajid},
 eprint = {2308.15816},
 title = {{Improving Underwater Visual Tracking With a Large Scale Dataset and Image Enhancement}},
 url = {http://arxiv.org/abs/2308.15816},
