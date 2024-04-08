@@ -46,7 +46,8 @@
 - [x] Provide link to paper ([here](https://arxiv.org/abs/2308.15816))
 - [x] Provide link to attributes file ([here](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=Q3Sa9B)).
 - [x] Benchmarking trackers on custom videos [here](1_Custom_Benchmarking_README.md)
-- [x] Provide dataset thumbnails [here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp). 
+- [x] Provide dataset thumbnails [here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp).
+- [ ] UVOT400 dataset evaluation server.
 - [ ] Attribute-wise evaluation results [here](1_Benchmarking_README.md/#attribute-wise-performance-evaluation)
 - [ ] Fine-tuned trackers benchmarking results
 - [ ] Enhanced frames trackers benchmarking results
@@ -68,9 +69,11 @@ Details about the data collection, annotations, domain-specific tracking attribu
 ### Links to Datasets
 
 1. Our UVOT400 dataset:
-   - Train Set: [Download link](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/Em9CQUgLcY1BnEBqpGUTrxQBnVPzBfpfPcUW7RmH3EON9w?e=pjNgIY) 
-   - Test Set: [Download link](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EmJKcYONDL9Kll9OJkArN-4B9UgfBPejZ8LHAxn6aP__Xg?e=21ELVO)
-   - Attributes file: [Download link](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=Q3Sa9B). 
+   - Train Set: [Download link](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/Em9CQUgLcY1BnEBqpGUTrxQBnVPzBfpfPcUW7RmH3EON9w?e=Kkric6) 
+   - Test Set: [Download link](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EmJKcYONDL9Kll9OJkArN-4B9UgfBPejZ8LHAxn6aP__Xg?e=WVyplR)
+   - Attributes file: [Download link](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=2wjPAp).
+  
+   - COMING SOON: UVOT400 dataset evaluation server...
 
 2. Our Previous UTB180 Dataset: 
    - [Kaggle Link](https://www.kaggle.com/dataset/21f6e3008c9ac0f51479b93fe0bb0b015469d70153f8987d9f2c3bb3eebbba99). 
