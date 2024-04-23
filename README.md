@@ -2,7 +2,7 @@
 
  - This repository is the official implementation of our work on **Improving Underwater Visual Tracking With a Large Scale Dataset and Image Enhancement**.
 
-[Paper ArXiv Link](https://arxiv.org/abs/2308.15816) | [Dataset](./README.md/#our-dataset-uvot400) | [Thumbnails](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp)
+[Paper ArXiv Link](https://arxiv.org/abs/2308.15816) | [Dataset](./README.md/#our-dataset-uvot400) | [Thumbnails](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp) | [Evaluation Server](README.md/#uvot400-evaluation-server)
 
 
 <table>
@@ -20,13 +20,8 @@
 
 ![Tracking Sample](images/sample_tracking.png)
 
-## Benchmarking SOTA Trackers on Custom Videos
-
- - This repository also allows you to quickly benchmark SOTA trackers on your custom videos [see here](1_Custom_Benchmarking_README.md). 
-
-
 ## News:
-- Apr. 22, 2024: UVOT400 evaluation server goes live [See here](README.md/#links-to-datasets).
+- Apr. 22, 2024: UVOT400 evaluation server goes live [see here](README.md/#uvot400-evaluation-server).
 - Nov. 16, 2023: Added two more trackers (ARTrack, MAT)[here](1_Custom_Benchmarking_README.md).
 - Oct. 19, 2023: Added two more trackers (SLT-Track and DropTrack).
 - Oct. 16, 2023: Added three more trackers (MixFormer, MixFormerV2, and AiATrack).
@@ -48,7 +43,7 @@
 - [x] Provide link to attributes file ([here](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=Q3Sa9B)).
 - [x] Benchmarking trackers on custom videos [here](1_Custom_Benchmarking_README.md)
 - [x] Provide dataset thumbnails [here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp).
-- [x] UVOT400 dataset evaluation server.
+- [x] UVOT400 dataset evaluation server [here](README.md/#uvot400-evaluation-server).
 - [ ] Attribute-wise evaluation results [here](1_Benchmarking_README.md/#attribute-wise-performance-evaluation)
 - [ ] Fine-tuned trackers benchmarking results
 - [ ] Enhanced frames trackers benchmarking results
@@ -74,11 +69,17 @@ Details about the data collection, annotations, domain-specific tracking attribu
    - Test Set: [Download link](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EmJKcYONDL9Kll9OJkArN-4B9UgfBPejZ8LHAxn6aP__Xg?e=WVyplR)
    - Attributes file: [Download link](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=2wjPAp).
   
-   - <b>Evaluation Server:</b> To evaluate your tracker on our dataset, please click [here](https://eval.ai/web/challenges/challenge-page/2268). Both train and test split evaluations are available.
 
 2. Our Previous UTB180 Dataset: 
    - [Kaggle Link](https://www.kaggle.com/dataset/21f6e3008c9ac0f51479b93fe0bb0b015469d70153f8987d9f2c3bb3eebbba99). 
    - **Reference:** B. Alawode, Y. Guo, M. Ummar, N. Werghi, J. Dias, A. Mian, and S. Javed, "UTB180: A high-quality benchmark for underwater tracking," in ACCV, 2022.
+
+### UVOT400 Evaluation Server
+
+To evaluate your tracker on our dataset, please click <a href="https://eval.ai/web/challenges/challenge-page/2268" target='blank'>here</a>. 
+
+NOTE: Both train and test split evaluations are available.
+
 
 ## Evaluated Trackers
 
@@ -128,10 +129,17 @@ For our experiments, we have utilized the success, precision, and normalized pre
 
 3. [Protocol III: Image enhancement before tracking](3_Enhanced_Benchmarking_README.md)
 
+
+## Benchmarking SOTA Trackers on Custom Videos
+
+ - This repository also allows you to quickly benchmark SOTA trackers on your custom videos [see here](1_Custom_Benchmarking_README.md). 
+
+
 ## Aknowledgements
 
 - Thanks to the authors of the trackers for providing the implementations.
 - Thanks to the [Pysot](https://github.com/STVIR/pysot) and [Pytracking](https://github.com/visionml/pytracking) libraries for providing the tracking evaluation codes.
+- We aknowledge the use of [eval.ai](https://eval.ai/) for creating the evaluation server.
 - This work acknowledges the support provided by the Khalifa University of Science and Technology under Faculty Start-Up grants FSU-2022-003 Award No. 8474000401.
 
 ## Citation
