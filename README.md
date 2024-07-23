@@ -10,7 +10,7 @@
 <a href="./README.md/#citation"><img src="https://img.shields.io/badge/Citation-pink"></a>
 </p>
 
-<table align="center">
+<table align="center" border="0">
   <tr>
     <th><div align="center">
   <img src="images/Video2.gif" width="300px" />
