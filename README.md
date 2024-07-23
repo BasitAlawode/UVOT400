@@ -25,7 +25,7 @@
 
 ![Tracking Sample](images/sample_tracking.png)
 
-## News:
+## Updates:
 - Apr. 22, 2024: UVOT400 evaluation server goes live [see here](README.md/#uvot400-evaluation-server).
 - Nov. 16, 2023: Added two more trackers (ARTrack, MAT)[here](1_Custom_Benchmarking_README.md).
 - Oct. 19, 2023: Added two more trackers (SLT-Track and DropTrack).
