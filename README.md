@@ -7,9 +7,10 @@
 <a href="./README.md/#our-dataset-uvot400"><img src="https://img.shields.io/badge/UVOT400%20Dataset-green"></a>
 <a href="https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp"><img src="https://img.shields.io/badge/Thumbnail-orange"></a>
 <a href="https://eval.ai/web/challenges/challenge-page/2268"><img src="https://img.shields.io/badge/Evaluation%20Server-g"></a>
+<a href="./README.md/#citation"><img src="https://img.shields.io/badge/Citation-pink"></a>
 </p>
 
-<table>
+<table align="center">
   <tr>
     <th><div align="center">
   <img src="images/Video2.gif" width="300px" />
