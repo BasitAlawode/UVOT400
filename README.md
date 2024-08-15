@@ -6,8 +6,12 @@
 <a href="https://arxiv.org/abs/2308.15816"><img src="https://img.shields.io/badge/arXiv-Paper_Link-blue"></a>
 <a href="./README.md/#our-dataset-uvot400"><img src="https://img.shields.io/badge/UVOT400%20Dataset-green"></a>
 <a href="https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=9A6cLn"><img src="https://img.shields.io/badge/Thumbnail-orange"></a>
-<a href="https://eval.ai/web/challenges/challenge-page/2268"><img src="https://img.shields.io/badge/Evaluation%20Server-g"></a>
-<a href="./README.md/#citation"><img src="https://img.shields.io/badge/Citation-pink"></a>
+<a href="https://eval.ai/web/challenges/challenge-page/2268"><img src="https://img.shields.io/badge/UVOT400_Evaluation%20Server-g"></a>
+</p>
+
+<p align="center">
+<a href="./1_Custom_Benchmarking_README.md"><img src="https://img.shields.io/badge/Benchmarking_Trackers_on_Custom_Videos-purple"></a>
+<a href="./README.md/#citation"><img src="https://img.shields.io/badge/Paper_Citation-pink"></a>
 </p>
 
 <table align="center" border="0">
@@ -25,7 +29,7 @@
 
 ![Tracking Sample](images/sample_tracking.png)
 
-## Updates:
+## Major Updates:
 - Apr. 22, 2024: UVOT400 evaluation server goes live [see here](README.md/#uvot400-evaluation-server).
 - Nov. 16, 2023: Added two more trackers (ARTrack, MAT)[here](1_Custom_Benchmarking_README.md).
 - Oct. 19, 2023: Added two more trackers (SLT-Track and DropTrack).
@@ -36,22 +40,6 @@
 - Aug. 30, 2023: Paper submitted for publication
 - Aug. 07, 2023: Repository made public.
 - June 30, 2023: Dataset (Train and Test Set link available)
-
-### TODO
-- [x] Include all pulled trackers folders
-- [x] Provide link to download dataset and annotations ([here](README.md/#links-to-datasets))
-- [x] Experiment environment creation ([here](README.md/#experiment-environment-setup))
-- [x] Pretrained trackers benchmarking results ([here](1_Benchmarking_README.md))
-- [x] Reproducing our results ([here](1_Benchmarking_README.md/#reproducing-our-results))
-- [x] Provide link to download pretrained trackers models ([here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EiEaxX6XgplLtXsPv95PURUBSNODK-irvo46Jks38-OmjA?e=bF3X59))
-- [x] Provide link to paper ([here](https://arxiv.org/abs/2308.15816))
-- [x] Provide link to attributes file ([here](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=Q3Sa9B)).
-- [x] Benchmarking trackers on custom videos [here](1_Custom_Benchmarking_README.md)
-- [x] Provide dataset thumbnails [here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp).
-- [x] UVOT400 dataset evaluation server [here](README.md/#uvot400-evaluation-server).
-- [ ] Attribute-wise evaluation results [here](1_Benchmarking_README.md/#attribute-wise-performance-evaluation)
-- [ ] Fine-tuned trackers benchmarking results
-- [ ] Enhanced frames trackers benchmarking results
 
 ## Our Main Paper Contributions
 
@@ -170,3 +158,19 @@ year = {2023}
   year={2022}
 }
 ```
+
+### TODO
+- [x] Include all pulled trackers folders
+- [x] Provide link to download dataset and annotations ([here](README.md/#links-to-datasets))
+- [x] Experiment environment creation ([here](README.md/#experiment-environment-setup))
+- [x] Pretrained trackers benchmarking results ([here](1_Benchmarking_README.md))
+- [x] Reproducing our results ([here](1_Benchmarking_README.md/#reproducing-our-results))
+- [x] Provide link to download pretrained trackers models ([here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EiEaxX6XgplLtXsPv95PURUBSNODK-irvo46Jks38-OmjA?e=bF3X59))
+- [x] Provide link to paper ([here](https://arxiv.org/abs/2308.15816))
+- [x] Provide link to attributes file ([here](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=Q3Sa9B)).
+- [x] Benchmarking trackers on custom videos [here](1_Custom_Benchmarking_README.md)
+- [x] Provide dataset thumbnails [here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp).
+- [x] UVOT400 dataset evaluation server [here](README.md/#uvot400-evaluation-server).
+- [ ] Attribute-wise evaluation results [here](1_Benchmarking_README.md/#attribute-wise-performance-evaluation)
+- [ ] Fine-tuned trackers benchmarking results
+- [ ] Enhanced frames trackers benchmarking results
