@@ -10,7 +10,7 @@ To benchmark SOTA trackers on your custom videos:
 
  - Download the tracker pre-trained model from the link below: 
  
- [Link to Pre-trained Trackers Weights](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EiEaxX6XgplLtXsPv95PURUBSNODK-irvo46Jks38-OmjA?e=BcvVgz). 
+ [Link to Pre-trained Trackers Weights](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EiEaxX6XgplLtXsPv95PURUBSNODK-irvo46Jks38-OmjA?e=7EDSQn). If link is broken, you can also download the trackers' model weights from there respective Github repositories.
  
  - Put it in the trained_trackers folder.
 
