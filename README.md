@@ -63,7 +63,7 @@ Details about the data collection, annotations, domain-specific tracking attribu
    - Attributes file: [Download link](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=c0H6f1).
 
 
-  NOTE: The Test Set contains the annotation of the first frame only. Please use our [evaluation server](README.md/UVOT400_Evaluation) to evaluate your tracker results on the Test Set.
+  NOTE: The Test Set contains the annotation of the first frame only. Please use our [evaluation server](https://eval.ai/web/challenges/challenge-page/2268) to evaluate your tracker results on the Test Set.
   
 
 2. Our Previous UTB180 Dataset: 
