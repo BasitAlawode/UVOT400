@@ -5,7 +5,7 @@
  <p align="center">
 <a href="https://arxiv.org/abs/2308.15816"><img src="https://img.shields.io/badge/arXiv-Paper_Link-blue"></a>
 <a href="./README.md/#our-dataset-uvot400"><img src="https://img.shields.io/badge/UVOT400%20Dataset-green"></a>
-<a href="https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=yn7Pns"><img src="https://img.shields.io/badge/Thumbnail-orange"></a>
+<a href="https://drive.google.com/drive/folders/1CVXIOe3C-lp6036dq9QPtjIPuVyOieOZ?usp=sharing"><img src="https://img.shields.io/badge/Thumbnail-orange"></a>
 <a href="https://eval.ai/web/challenges/challenge-page/2268"><img src="https://img.shields.io/badge/UVOT400_Evaluation%20Server-g"></a>
 </p>
 
@@ -58,12 +58,12 @@ Details about the data collection, annotations, domain-specific tracking attribu
 ### Links to Datasets
 
 1. Our UVOT400 dataset:
-   - Train Set: [Download link](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/Em9CQUgLcY1BnEBqpGUTrxQBnVPzBfpfPcUW7RmH3EON9w?e=RvX91e) 
-   - Test Set: [Download link](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EmJKcYONDL9Kll9OJkArN-4B9UgfBPejZ8LHAxn6aP__Xg?e=nglO87)
-   - Attributes file: [Download link](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=c0H6f1).
+   - Train Set: [Download link](https://drive.google.com/drive/folders/1iwba0GB4tlGLvGYiY4UmqwpqMrk4ATZz?usp=sharing) 
+   - Test Set: [Download link](https://drive.google.com/drive/folders/1YVga5qXsD1rT3Wf5tz7asm3nlJCOklE6?usp=sharing)
+   - Attributes file: [Download link](https://docs.google.com/spreadsheets/d/1W3TEXnMwq2kC5ypeqIuwJc532c8hXVNS/edit?usp=sharing&ouid=107844401918710795180&rtpof=true&sd=true)
 
 
-  NOTE: The Test Set contains the annotation of the first frame only. Please use our [evaluation server](https://eval.ai/web/challenges/challenge-page/2268) to evaluate your tracker results on the Test Set.
+  NOTE: The Test Set contains the annotation of the first frame only. Please use our [evaluation server](https://eval.ai/web/challenges/challenge-page/2268) to evaluate your tracker results.
   
 
 2. Our Previous UTB180 Dataset: 
