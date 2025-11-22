@@ -30,19 +30,18 @@
 ![Tracking Sample](images/sample_tracking.png)
 
 ## Major Updates:
-- Nov. 22, 2025: Full test set annotation now available for ease of benchmarking.
+- Nov. 22, 2025: Full test set annotation now available for ease of testing.
 - Apr. 22, 2024: UVOT400 evaluation server goes live [see here](README.md/#uvot400-evaluation-server).
   
 <details>
-  <summary>Show more</summary>
+  <summary>Show more updates</summary>
  
 - Nov. 16, 2023: Added two more trackers (ARTrack, MAT)[here](1_Custom_Benchmarking_README.md).
 - Oct. 19, 2023: Added two more trackers (SLT-Track and DropTrack).
 - Oct. 16, 2023: Added three more trackers (MixFormer, MixFormerV2, and AiATrack).
 - Oct. 12, 2023: Added two new trackers (SimTrack and GRM).
 - Oct. 05, 2023: Quickly Benchmark SOTA trackers on your custom videos. 
-- Aug. 31, 2023: ArXiv Link to paper provided
-- Aug. 30, 2023: Paper submitted for publication
+- Aug. 31, 2023: ArXiv Link to paper provided.
 - Aug. 07, 2023: Repository made public.
 - June 30, 2023: Dataset (Train and Test Set link available)
 
