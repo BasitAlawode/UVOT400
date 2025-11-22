@@ -30,7 +30,12 @@
 ![Tracking Sample](images/sample_tracking.png)
 
 ## Major Updates:
+- Nov. 22, 2025: Full test set annotation now available for ease of benchmarking.
 - Apr. 22, 2024: UVOT400 evaluation server goes live [see here](README.md/#uvot400-evaluation-server).
+  
+<details>
+  <summary>Show more</summary>
+ 
 - Nov. 16, 2023: Added two more trackers (ARTrack, MAT)[here](1_Custom_Benchmarking_README.md).
 - Oct. 19, 2023: Added two more trackers (SLT-Track and DropTrack).
 - Oct. 16, 2023: Added three more trackers (MixFormer, MixFormerV2, and AiATrack).
@@ -40,6 +45,8 @@
 - Aug. 30, 2023: Paper submitted for publication
 - Aug. 07, 2023: Repository made public.
 - June 30, 2023: Dataset (Train and Test Set link available)
+
+</details>
 
 ## Our Main Paper Contributions
 
@@ -59,16 +66,14 @@ Details about the data collection, annotations, domain-specific tracking attribu
 
 1. Our UVOT400 dataset:
    - Train Set: [Download link](https://drive.google.com/drive/folders/1iwba0GB4tlGLvGYiY4UmqwpqMrk4ATZz?usp=sharing) 
-   - Test Set: [Download link](https://drive.google.com/drive/folders/1YVga5qXsD1rT3Wf5tz7asm3nlJCOklE6?usp=sharing)
+   - Test Set (First frame annotation only): [Download link](https://drive.google.com/drive/folders/1YVga5qXsD1rT3Wf5tz7asm3nlJCOklE6?usp=sharing)
+   - Test Set (Full): [Download link](https://drive.google.com/drive/folders/1EFvO-jGuwe_FyxUiA5QxvrVMA7-F3TKe?usp=sharing)
    - Attributes file: [Download link](https://docs.google.com/spreadsheets/d/1W3TEXnMwq2kC5ypeqIuwJc532c8hXVNS/edit?usp=sharing&ouid=107844401918710795180&rtpof=true&sd=true)
 
-
-  NOTE: The Test Set contains the annotation of the first frame only. Please use our [evaluation server](https://eval.ai/web/challenges/challenge-page/2268) to evaluate your tracker results.
+  NOTE: You may use our [evaluation server](https://eval.ai/web/challenges/challenge-page/2268) to evaluate your tracker results.
   
+2. Our Previous UTB180 Dataset: [Kaggle Link](https://www.kaggle.com/dataset/21f6e3008c9ac0f51479b93fe0bb0b015469d70153f8987d9f2c3bb3eebbba99).
 
-2. Our Previous UTB180 Dataset: 
-   - [Kaggle Link](https://www.kaggle.com/dataset/21f6e3008c9ac0f51479b93fe0bb0b015469d70153f8987d9f2c3bb3eebbba99). 
-   - **Reference:** B. Alawode, Y. Guo, M. Ummar, N. Werghi, J. Dias, A. Mian, and S. Javed, "UTB180: A high-quality benchmark for underwater tracking," in ACCV, 2022.
 
 ### UVOT400 Evaluation Server
 
@@ -161,16 +166,6 @@ year = {2023}
   year={2022}
 }
 ```
-
-### TODO
-- [x] Include all pulled trackers folders
-- [x] Provide link to download dataset and annotations ([here](README.md/#links-to-datasets))
-- [x] Experiment environment creation ([here](README.md/#experiment-environment-setup))
-- [x] Pretrained trackers benchmarking results ([here](1_Benchmarking_README.md))
-- [x] Reproducing our results ([here](1_Benchmarking_README.md/#reproducing-our-results))
-- [x] Provide link to download pretrained trackers models ([here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EiEaxX6XgplLtXsPv95PURUBSNODK-irvo46Jks38-OmjA?e=bF3X59))
-- [x] Provide link to paper ([here](https://arxiv.org/abs/2308.15816))
-- [x] Provide link to attributes file ([here](https://kuacae-my.sharepoint.com/:x:/g/personal/100060517_ku_ac_ae/EbL0y6an-EhMqLbDtvBSozEBSGjKg__lvevgKSA1udx3jg?e=Q3Sa9B)).
 - [x] Benchmarking trackers on custom videos [here](1_Custom_Benchmarking_README.md)
 - [x] Provide dataset thumbnails [here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp).
 - [x] UVOT400 dataset evaluation server [here](README.md/#uvot400-evaluation-server).
