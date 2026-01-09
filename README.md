@@ -147,6 +147,16 @@ For our experiments, we have utilized the success, precision, and normalized pre
 If you find our work useful for your research, please consider citing:
 
 ```bibtex
+@article{Alawode2026_uvot1900,
+title = {Underwater visual tracking with a large scale dataset and image enhancement},
+author = {Basit Alawode and Sajid Javed and Fayaz Ali Dharejo and Mehnaz Ummar and Arif Mahmoud and Fahad Shahbaz Khan and Jiri Matas}
+journal = {Neurocomputing},
+pages = {132586},
+year = {2026},
+issn = {0925-2312},
+doi = {https://doi.org/10.1016/j.neucom.2025.132586},
+url = {https://www.sciencedirect.com/science/article/pii/S0925231225032588},
+}
 @article{Alawode2023,
 archivePrefix = {arXiv},
 arxivId = {2308.15816},
