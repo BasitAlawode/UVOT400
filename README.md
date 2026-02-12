@@ -30,8 +30,10 @@
 ![Tracking Sample](images/sample_tracking.png)
 
 ## Major Updates:
-- Nov. 22, 2025: Full test set annotation now available for ease of testing.
-- Apr. 22, 2024: UVOT400 evaluation server goes live [see here](README.md/#uvot400-evaluation-server).
+- Feb, 2026: Natural language descriptions released [here](README.md/#links-to-datasets).
+- Jan, 2026: Paper published in [Neurocomputing](README.md/#citation).
+- Nov, 2025: Full test set annotation now available for ease of testing.
+- Apr, 2024: UVOT400 evaluation server goes live [see here](README.md/#uvot400-evaluation-server).
   
 <details>
   <summary>Show more updates</summary>
@@ -68,6 +70,7 @@ Details about the data collection, annotations, domain-specific tracking attribu
    - Test Set (First frame annotation only): [Download link](https://drive.google.com/drive/folders/1YVga5qXsD1rT3Wf5tz7asm3nlJCOklE6?usp=sharing)
    - Test Set (Full): [Download link](https://drive.google.com/drive/folders/1EFvO-jGuwe_FyxUiA5QxvrVMA7-F3TKe?usp=sharing)
    - Attributes file: [Download link](https://docs.google.com/spreadsheets/d/1W3TEXnMwq2kC5ypeqIuwJc532c8hXVNS/edit?usp=sharing&ouid=107844401918710795180&rtpof=true&sd=true)
+   - Language descriptions: [Human Labeled](https://drive.google.com/drive/folders/1-1gsxT7-Z2tb-VlPRIXWTipJ8WxWsOdB?usp=sharing), [MarineGPT Descriptions](https://drive.google.com/drive/folders/1A54oH7i3OIP0VfPS6FcTrN5eVnk9iyA5?usp=sharing). [Credit](README.md/#natural-language-description-credit)
 
   NOTE: You may use our [evaluation server](https://eval.ai/web/challenges/challenge-page/2268) to evaluate your tracker results.
   
@@ -176,6 +179,20 @@ year = {2023}
   year={2022}
 }
 ```
+
+## Natural Language Description Credit
+```
+@INPROCEEDINGS{michael2024,
+  author={Michael, Yonathan and Alansari, Mohamad and Javed, Sajid},
+  booktitle={2024 IEEE International Conference on Advanced Video and Signal Based Surveillance (AVSS)}, 
+  title={Text-Guided Multi-Modal Fusion for Underwater Visual Tracking}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-6},
+  doi={10.1109/AVSS61716.2024.10672591}}
+```
+
 - [x] Benchmarking trackers on custom videos [here](1_Custom_Benchmarking_README.md)
 - [x] Provide dataset thumbnails [here](https://kuacae-my.sharepoint.com/:f:/g/personal/100060517_ku_ac_ae/EoF4-F76hNhFqvxJfomF6YoBw0Dz5mRYubL9KpoWs6gAkw?e=hzKfxp).
 - [x] UVOT400 dataset evaluation server [here](README.md/#uvot400-evaluation-server).
